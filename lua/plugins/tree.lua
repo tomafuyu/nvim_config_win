@@ -56,7 +56,8 @@ local function oa(bufnr)
     n("f" , api.live_filter.start, "Filter start")
 
     n("m", mk.toggle, "Toggle mark")
-    n("M", mk.clear, "Clear mark")
+    n("M", mk.clear, "Clear marks")
+    n("X", mk.bulk.move, "Move marks")
     n("T", function()
         local marks = mk.list()
         if #marks > 0 then

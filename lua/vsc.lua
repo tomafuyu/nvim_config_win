@@ -11,6 +11,7 @@ require("lazy").setup({
         { "andymass/vim-matchup" },
         { "wellle/targets.vim" },
         { "michaeljsmith/vim-indent-object" },
+        { 'nvim-mini/mini.align', version = false, opts = {} },
     },
 })
 
@@ -62,6 +63,7 @@ nn("<Leader>v", "<C-v>")
 nn("<Leader><Leader>p", v"workbench.action.showCommands")
 nn("<C-j>", v"workbench.action.togglePanel")
 nn("<Leader>d", v"workbench.debug.action.toggleRepl")
+nn("<Leader><Leader>a", v"workbench.action.toggleActivityBarVisibility")
 
 nn("go", v"editor.action.showDefinitionPreviewHover")
 nn("]d", v"editor.action.marker.next")

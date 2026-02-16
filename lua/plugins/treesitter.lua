@@ -3,14 +3,14 @@ return {
         "nvim-treesitter/nvim-treesitter",
         branch = "master",
         build = ":TSUpdate",
-        opts = {},
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = { "markdown" },
-                },
-            })
+        opts = {
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = { "markdown" },
+            },
+        },
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
             local hi = require("vc.hi")
             hi("TreesitterContext",           { bg = "#333333" })
             hi("TreesitterContextLineNumber", { bg = "NONE" })

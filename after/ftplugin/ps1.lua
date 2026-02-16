@@ -3,3 +3,5 @@ vim.lsp.config("powershell_es", {
     shell =  "pwsh.exe",
 })
 
+vim.lsp.enable("powershell_es")
+

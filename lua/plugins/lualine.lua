@@ -87,12 +87,12 @@ return {
                 }
             },
             lualine_x = {
-                -- {
-                --     "%S",
-                --     fmt = function(s, _)
-                --         return s .. "🪼🐬"
-                --     end,
-                -- },
+                {
+                    "filename",
+                    path = 4,
+                    file_status = false,
+                    -- shorting_target = 40,
+                },
             },
         },
         sections = {
@@ -122,22 +122,13 @@ return {
                         active = { fg = c.white, gui = "bold" },
                     },
                 },
-                {
-                    "filename",
-                    path = 4,
-                    symbols = {
-                        modified = "",
-                        readonly = "",
-                        unnamed =  "",
-                        newfile =  "",
-                    },
-                },
             },
             lualine_x = {
                 "searchcount",
                 "selectioncount",
                 "location",
                 "%B",
+                -- "%S"
             },
             lualine_y = {
                 {

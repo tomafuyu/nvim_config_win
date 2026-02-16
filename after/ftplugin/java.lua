@@ -25,3 +25,5 @@ vim.lsp.config("jdtls", {
 vim.b.match_words = '\\<if\\>:\\<else if\\>:\\<else\\>'
 -- vim.b.match_pairs = { ['"""'] = '"""' }
 
+-- vim.lsp.enable("jdtls")
+

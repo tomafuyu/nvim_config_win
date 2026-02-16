@@ -1,4 +1,3 @@
-
 local hi = require("vc.hi")
 
 hi("CursorLineNr", { fg = "#cceeff" })

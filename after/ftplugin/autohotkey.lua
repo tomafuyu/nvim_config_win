@@ -13,3 +13,5 @@ vim.lsp.config("autohotkey_lsp", {
     flags = {debounce_text_changes = 500},
 })
 
+vim.lsp.enable("autohotkey_lsp")
+
