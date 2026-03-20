@@ -3,7 +3,10 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
-    lazy = true,
+    cmd = { "Oil" },
+    keys = {
+        { "<Leader>o", function() require("oil").toggle_float() end },
+    },
     opts = {
         default_file_explorer = false,
         keymaps = {
@@ -16,10 +19,6 @@ return {
                 winblend = 28,
             },
         },
-    },
-    cmd = { "Oil" },
-    keys = {
-        { "<Leader>o", function() require("oil").toggle_float() end },
     },
 }
 

@@ -40,6 +40,7 @@ return {
         "nvim-tree/nvim-web-devicons"
     },
     lazy = false,
+    priority = 100,
     opts = {
         options = {
             icons_enabled = true,
@@ -47,10 +48,10 @@ return {
             theme = t,
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
-            disabled_filetypes = {
-                statusline = {},
-            },
-            ignore_focus = {},
+            -- disabled_filetypes = {
+            --     statusline = {},
+            -- },
+            -- ignore_focus = {},
             always_divide_middle = true,
             always_show_tabline = true,
             globalstatus = true,
@@ -64,11 +65,12 @@ return {
                 {
                     "tabs",
                     mode = 1,
-                    max_length = vim.o.columns - 8,
+                    max_length = vim.o.columns,
                     fmt = function(name, context)
                         local tabs = vim.api.nvim_list_tabpages()
                         local tab = tabs[context.tabnr]
                         if not tab then return name end
+                        local nr = vim.api.nvim_tabpage_get_number(tab)
                         local wins = vim.api.nvim_tabpage_list_wins(tab)
                         -- local win = vim.api.nvim_tabpage_get_win(tab)
                         local bufs = {}
@@ -82,16 +84,16 @@ return {
                                 end
                             end
                         end
-                        return table.concat(bufs, " | ")
+                        return nr .. " " .. table.concat(bufs, " | ")
                     end
                 }
             },
-            lualine_x = {
+            lualine_z = {
                 {
                     "filename",
-                    path = 4,
+                    path = 1,
                     file_status = false,
-                    -- shorting_target = 40,
+                    shorting_target = 32,
                 },
             },
         },
@@ -122,13 +124,13 @@ return {
                         active = { fg = c.white, gui = "bold" },
                     },
                 },
+                -- "%S", // need to set showcmd, showcmdloc
             },
             lualine_x = {
                 "searchcount",
                 "selectioncount",
                 "location",
                 "%B",
-                -- "%S"
             },
             lualine_y = {
                 {

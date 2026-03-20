@@ -1,5 +1,3 @@
-require("vc.nn")("<Leader>t", "<Cmd>NvimTreeToggle<CR>")
-
 local function oa(bufnr)
     local api = require("nvim-tree.api")
     local nd = api.node
@@ -82,6 +80,10 @@ return {
     },
     version = "*",
     lazy = false,
+    priority = 100,
+    keys = {
+        { "<Leader>t", "<Cmd>NvimTreeToggle<CR>" },
+    },
     opts = {
         actions = {
             expand_all = {
@@ -90,7 +92,7 @@ return {
         },
         filters = {
             dotfiles = true,
-            -- git_ignored = true,
+            git_ignored = false,
         },
         renderer = {
             group_empty = true,

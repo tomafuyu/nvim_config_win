@@ -20,6 +20,8 @@ set.number = true
 
 set.belloff = "all"
 set.shortmess:append("F")
+-- set.showcmd = true
+-- set.showcmdloc = "statusline"
 
 set.termguicolors = true
 set.pumblend = 16

@@ -1,4 +1,3 @@
-
 -- https://github.com/vscode-neovim/vscode-neovim/issues/540
 vim.g.matchup_matchparen_deferred = 1
 

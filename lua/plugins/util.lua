@@ -1,25 +1,25 @@
 return {
     {
         "cohama/lexima.vim",
-        event = "VeryLazy",
     },
     {
         "andymass/vim-matchup",
-        event = "VeryLazy",
-        opts = {},
+        -- enabled = false,
+        opts = {
+            treesitter = {
+                stopline = 500,
+            },
+        },
     },
     {
         "wellle/targets.vim",
-        event = "VeryLazy",
     },
     {
         "michaeljsmith/vim-indent-object",
-        event = "VeryLazy",
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        event = "VeryLazy",
         opts = {
             indent = {
                 char = "▏"
@@ -30,8 +30,15 @@ return {
         },
     },
     {
+        "nvim-mini/mini.align",
+        keys = {
+            { "ga" },
+            { "gA" },
+        },
+        opts = {},
+    },
+    {
         "norcalli/nvim-colorizer.lua",
-        lazy = true,
         cmd = {
             "ColorizerAttachToBuffer",
             "ColorizerDetachFromBuffer",
@@ -41,6 +48,7 @@ return {
         config = function()
             require("colorizer").setup({ "*" }, {
                 name = false,
+                RGB = true,
                 RRGGBBAA = true,
                 rgb_fn = true,
                 hsl_fn = true,

@@ -1,4 +1,4 @@
-# nvim settings
+# nvim settings and info
 
 ## mapping
 
@@ -28,8 +28,22 @@ no nn vn xn snor ono no ino ln cno tno
 
 ## structure
 
-- lua
-    - vc : vim cmd functions
+- vc: vim cmd functions
+- util: not for vscode
+
+## lazy
+
+- priority
+    - 50: default
+    - 90
+        - tiny inline diagnostic
+    - 100
+        - lualine
+        - nvim tree
+    - 200
+        - lspconfig
+
+## ascii
 
 ----------------
  !"#$%&'()*+,-./

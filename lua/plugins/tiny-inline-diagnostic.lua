@@ -1,7 +1,6 @@
 return {
     "rachartier/tiny-inline-diagnostic.nvim",
-    priority = 1000,
-    event = "VeryLazy",
+    -- priority = 90,
     opts = {
         options = {
             multilines = {

@@ -3,10 +3,12 @@ return {
     dependencies = {
         "MunifTanjim/nui.nvim",
     },
-    event = "VeryLazy",
     opts = {
         notify = { enabled = false },
-        messages = { enabled = false },
+        messages = {
+            enabled = true,
+            view = "mini"
+        },
         lsp = {
             hover = { enabled = false },
             progress = { enabled = false },
@@ -19,7 +21,7 @@ return {
         views = {
             cmdline_popup = {
                 position = { row = 16, col = "50%", },
-                size = { width = 60, height = "auto", },
+                size = { width = 80, height = "auto", },
             },
             popupmenu = {
                 relative = "editor",
