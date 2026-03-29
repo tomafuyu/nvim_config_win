@@ -12,12 +12,6 @@ return {
         },
     },
     {
-        "wellle/targets.vim",
-    },
-    {
-        "michaeljsmith/vim-indent-object",
-    },
-    {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {
@@ -28,14 +22,6 @@ return {
                 enabled = false,
             }
         },
-    },
-    {
-        "nvim-mini/mini.align",
-        keys = {
-            { "ga" },
-            { "gA" },
-        },
-        opts = {},
     },
     {
         "norcalli/nvim-colorizer.lua",

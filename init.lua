@@ -31,17 +31,22 @@ require("lazy").setup({
     spec = {
         { "neovim/nvim-lspconfig", priority = 200},
         { import = "plugins" },
-        { "willelz/badapple.nvim", cmd = "BadAppleNvim" },
     },
 })
 
-for _, s in ipairs {
-    "vimls",
-    "clangd",
+vim.lsp.enable({
+    "lua_ls",
+    "powershell_es",
+    "autohotkey_lsp",
+    "rust_analyzer",
+    "pyright",
+    "tinymist",
     -- "emmet_language_server",
     -- "emmet_ls",
     "cssls",
     "ts_ls",
-    "pyright",
-} do vim.lsp.enable(s) end
+    "clangd",
+    "vimls",
+    -- "jdtls",
+})
 

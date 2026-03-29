@@ -116,7 +116,7 @@ return {
                     padding = 0,
                     icons_enabled = false,
                     show_modified_status = false,
-                    component_separators = { left = "", right = "" },
+                    component_separators = { left = "" },
                     symbols = {
                         alternate_file = "",
                     },
@@ -124,7 +124,7 @@ return {
                         active = { fg = c.white, gui = "bold" },
                     },
                 },
-                -- "%S", // need to set showcmd, showcmdloc
+                "%S", -- set showcmd, showcmdloc
             },
             lualine_x = {
                 "searchcount",

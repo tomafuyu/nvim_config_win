@@ -24,6 +24,4 @@ vim.lsp.config("rust_analyzer", {
 -- vim.diagnostic.config({
 --     update_in_insert = true,
 -- })
-vim.lsp.enable("rust_analyzer")
--- https://www.github.com/simrat39/rust-tools.nvim
 

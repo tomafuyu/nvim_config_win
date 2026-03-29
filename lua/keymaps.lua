@@ -6,12 +6,12 @@ local ino = require("vc.ino")
 xn(">", ">gv")
 xn("<", "<gv")
 
+no("X", "\"_x")
 no("<Leader>d", "\"*d")
 no("<Leader>y", "\"*y")
 no("<Leader>Y", "\"*Y")
 no("<Leader>p", "\"*p")
 no("<Leader>P", "\"*P")
-no("X", "\"_x")
 
 no("gk", "H")
 no("gj", "L")
@@ -23,17 +23,11 @@ no("-", "<C-x>")
 
 nn("<C-k>", "<Cmd>move -2<CR>")
 nn("<C-j>", "<Cmd>move +1<CR>")
+
 nn("H", "gT")
 nn("L", "gt")
-nn("<Leader>1", "1gt")
-nn("<Leader>2", "2gt")
-nn("<Leader>3", "3gt")
-nn("<Leader>4", "4gt")
-nn("<Leader>5", "5gt")
-nn("<Leader>6", "6gt")
-nn("<Leader>7", "7gt")
-nn("<Leader>8", "8gt")
-nn("<Leader>9", "9gt")
+for i = 1, 9 do nn("<Leader>"..i, i.."gt") end
+
 nn("<Leader>k", "<C-w>k")
 nn("<Leader>j", "<C-w>j")
 nn("<Leader>h", "<C-w>h")
@@ -48,11 +42,7 @@ nn("<Leader>>", "<Cmd>tabm +1<CR>")
 
 nn("<CR>", "i<CR><Esc>")
 nn("<Esc><Esc>","<Cmd>noh<CR>")
--- nn("<Leader>r", "<Cmd>reg<CR>")
 -- nn("<Leader>v", "")
-
-no("cc", "<Cmd>j<CR>")
-no("cC", "<Cmd>j!<CR>")
 
 nn("<C-s>", "<Cmd>w<CR>")
 ino("<C-s>", "<Esc><Cmd>w<CR>")

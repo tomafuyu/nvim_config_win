@@ -35,8 +35,6 @@ no nn vn xn snor ono no ino ln cno tno
 
 - priority
     - 50: default
-    - 90
-        - tiny inline diagnostic
     - 100
         - lualine
         - nvim tree
