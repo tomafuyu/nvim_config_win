@@ -34,6 +34,27 @@ local t = {
     }
 }
 
+local function fmt_tab(name, context)
+    local tabs = vim.api.nvim_list_tabpages()
+    local tab = tabs[context.tabnr]
+    if not tab then return name end
+    local nr = vim.api.nvim_tabpage_get_number(tab)
+    local wins = vim.api.nvim_tabpage_list_wins(tab)
+    -- local win = vim.api.nvim_tabpage_get_win(tab)
+    local bufs = {}
+    for _, w in ipairs(wins) do
+        if vim.api.nvim_win_get_config(w).relative == "" then
+            local i = vim.api.nvim_win_get_buf(w)
+            local n = vim.api.nvim_buf_get_name(i)
+            n = n ~= "" and vim.fn.fnamemodify(n, ":t") or "?"
+            if (not vim.startswith(n, "NvimTree")) then
+                table.insert(bufs, n)
+            end
+        end
+    end
+    return nr .. " " .. table.concat(bufs, " | ")
+end
+
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
@@ -43,14 +64,10 @@ return {
     priority = 100,
     opts = {
         options = {
+            theme = t, -- wombat
             icons_enabled = true,
-            -- theme = "wombat",
-            theme = t,
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
-            -- disabled_filetypes = {
-            --     statusline = {},
-            -- },
             -- ignore_focus = {},
             always_divide_middle = true,
             always_show_tabline = true,
@@ -66,26 +83,7 @@ return {
                     "tabs",
                     mode = 1,
                     max_length = vim.o.columns,
-                    fmt = function(name, context)
-                        local tabs = vim.api.nvim_list_tabpages()
-                        local tab = tabs[context.tabnr]
-                        if not tab then return name end
-                        local nr = vim.api.nvim_tabpage_get_number(tab)
-                        local wins = vim.api.nvim_tabpage_list_wins(tab)
-                        -- local win = vim.api.nvim_tabpage_get_win(tab)
-                        local bufs = {}
-                        for _, w in ipairs(wins) do
-                            if vim.api.nvim_win_get_config(w).relative == "" then
-                                local i = vim.api.nvim_win_get_buf(w)
-                                local n = vim.api.nvim_buf_get_name(i)
-                                n = n ~= "" and vim.fn.fnamemodify(n, ":t") or "?"
-                                if (not vim.startswith(n, "NvimTree")) then
-                                    table.insert(bufs, n)
-                                end
-                            end
-                        end
-                        return nr .. " " .. table.concat(bufs, " | ")
-                    end
+                    fmt = fmt_tab,
                 }
             },
             lualine_z = {
@@ -99,10 +97,7 @@ return {
         },
         sections = {
             lualine_a = {
-                {
-                    "mode",
-                    color = { gui = "bold" },
-                },
+                { "mode", color = { gui = "bold" } },
                 "reg_recording",
             },
             lualine_b = {
@@ -117,12 +112,8 @@ return {
                     icons_enabled = false,
                     show_modified_status = false,
                     component_separators = { left = "" },
-                    symbols = {
-                        alternate_file = "",
-                    },
-                    buffers_color = {
-                        active = { fg = c.white, gui = "bold" },
-                    },
+                    symbols = { alternate_file = "" },
+                    buffers_color = { active = { fg = c.white, gui = "bold" } },
                 },
                 "%S", -- set showcmd, showcmdloc
             },
@@ -133,15 +124,10 @@ return {
                 "%B",
             },
             lualine_y = {
-                {
-                    "diagnostics",
-                    sources = { "nvim_lsp" },
-                },
+                { "diagnostics", sources = { "nvim_lsp" } },
                 {
                     "lsp_status",
-                    symbols = {
-                        spinner = { "|", "/", "-", "\\" }
-                    }
+                    symbols = { spinner = { "|", "/", "-", "\\" } }
                 },
             },
             lualine_z = {

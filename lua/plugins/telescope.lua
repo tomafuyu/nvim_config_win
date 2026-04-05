@@ -12,5 +12,10 @@ return {
         { "<leader>fb", "<Cmd>Telescope buffers<CR>" },
         { "<leader>fh", "<Cmd>Telescope help_tags<CR>" },
     },
+    opts = {
+        defaults = {
+            borderchars = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" }, -- "╦" "╩" "╬"
+        }
+    }
 }
 

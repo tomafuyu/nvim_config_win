@@ -31,14 +31,15 @@ return {
             "ColorizerReloadAllBuffers",
             "ColorizerToggle",
         },
-        config = function()
-            require("colorizer").setup({ "*" }, {
-                name = false,
-                RGB = true,
-                RRGGBBAA = true,
-                rgb_fn = true,
-                hsl_fn = true,
-            })
+        opts = {
+            name = false,
+            RGB = true,
+            RRGGBBAA = true,
+            rgb_fn = true,
+            hsl_fn = true,
+        },
+        config = function(_, opts)
+            require("colorizer").setup({ "*" }, opts)
         end
     },
 }

@@ -1,6 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.g.EasyMotion_use_migemo = 1
+
+if vim.g.vscode then require("vsc") return end
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -10,12 +14,6 @@ vim.g.loaded_netrwPlugin = 1
 -- vim.g.matchup_text_obj_enabled = 1
 vim.g.matchup_treesitter_enabled = 1
 
-vim.g.EasyMotion_use_migemo = 1
-
-vim.g["denops#deno"] = "C:\\ProgramData\\scoop\\shims\\deno.exe"
-
-if vim.g.vscode then require("vsc") return end
-
 require("options")
 require("keymaps")
 require("highlights")
@@ -24,14 +22,13 @@ require("commands")
 require("vc.nn")("<Leader>z", "<Cmd>Lazy<CR>")
 require("config.lazy")
 require("lazy").setup({
+    ui = {
+        border = "double",
+    },
     checker = {
-        enabled = true,
-        notify = false,
+        enabled = false,
     },
-    spec = {
-        { "neovim/nvim-lspconfig", priority = 200},
-        { import = "plugins" },
-    },
+    spec = { import = "plugins" },
 })
 
 vim.lsp.enable({

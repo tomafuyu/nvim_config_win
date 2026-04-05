@@ -1,34 +1,55 @@
 local hi = require("vc.hi")
 
-hi("CursorLineNr", { fg = "#cceeff" })
-hi("LineNr",       { fg = "#a0a0a0" })
-hi("CursorLine",   { bg = "NONE", underline = true })
-hi("CursorColumn", { bg = "#303040" })
-hi("WinSeparator", { fg = "#00aaee" })
+local p = {
+    none   = "NONE",
+    white  = "#eeeeee",
+    gray   = "#a0a0a0",
+    black1 = "#111111",
+    black3 = "#333333",
+    green  = "#00dd00",
+    lime   = "#33ff55",
+    pale   = "#99ffcc",
+    cyan   = "#44eeff",
+    sky    = "#11ccff",
+    deep   = "#00bbff",
+    blue   = "#00aaee",
+    alice  = "#cceeff",
+    steel  = "#88bbdd",
+    purple = "#bb88ee",
+    pink   = "#ee88ee",
+    wheat  = "#eeddbb",
+}
 
-hi("Normal",       { fg = "#eeeeee", bg = "NONE" })
-hi("Statement",    { fg = "#00bbff" })
-hi("PreProc",      { fg = "#00bbff" })
-hi("Type",         { fg = "#00bbff" })
-hi("Special",      { fg = "#11ccff" })
-hi("Identifier",   { fg = "#44eeff" })
-hi("Function",     { fg = "#aaffcc" })
-hi("Delimiter",    { fg = "#eeddbb" })
-hi("Operator",     { fg = "#bb88ee" })
-hi("Constant",     { fg = "#00dd00" })
-hi("Number",       { fg = "#33ff55" })
-hi("String",       { fg = "#ee88ee" })
-hi("Comment",      { fg = "#88bbdd", italic = true })
-hi("Todo",         { bg = "#111111" })
-hi("Search",       { fg = "#001111", bg = "#ffffee" })
-hi("Title",        { fg = "#00bbff" })
+hi("CursorLineNr", { fg = p.alice })
+hi("LineNr",       { fg = p.gray })
+hi("CursorLine",   { bg = p.none, underline = true })
+hi("CursorColumn", { bg = p.black3 })
+hi("WinSeparator", { fg = p.blue })
+hi("FloatBorder",  { fg = p.blue })
+
+hi("Normal",       { fg = p.white, bg = p.none })
+hi("Title",        { fg = p.deep })
+hi("Statement",    { fg = p.deep })
+hi("PreProc",      { fg = p.deep })
+hi("Type",         { fg = p.deep })
+hi("Special",      { fg = p.sky })
+hi("Identifier",   { fg = p.cyan })
+hi("Function",     { fg = p.pale })
+hi("Delimiter",    { fg = p.wheat })
+hi("Operator",     { fg = p.purple})
+hi("Constant",     { fg = p.green })
+hi("Number",       { fg = p.lime })
+hi("String",       { fg = p.pink })
+hi("Comment",      { fg = p.steel, italic = true })
+hi("Search",       { reverse = true })
 
 vim.fn.matchadd("FullWidthSpace", "　")
 hi("FullWidthSpace", { bg = "#666622" })
 
-hi("@lsp.typemod.variable.defaultLibrary.javascript", { fg = "#1984ee" })
+-- hi("@lsp.typemod.variable.defaultLibrary.javascript", { fg = "#1984ee" })
 
--- hl("NormalFloat", { bg = "#667788" })
+-- hi("Todo",         { bg = "#111111" })
+-- hi("NormalFloat", { bg = "#667788" }) -- e.g. lazy.nvim
 -- hl("sassClass", { fg = "#99ffbb" })
 -- hl("sassID",    { fg = "#dada55" })
 -- #a5a500

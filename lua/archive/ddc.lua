@@ -1,3 +1,5 @@
+vim.g["denops#deno"] = "C:\\ProgramData\\scoop\\shims\\deno.exe"
+
 return {
     {
         "Shougo/ddc.vim",

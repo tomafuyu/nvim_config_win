@@ -51,5 +51,10 @@ set.shellxquote = ""
 set.modifiable = true
 
 set.undofile = true
-set.undodir = vim.fn.expand("$HOME/AppData/Local/nvim-data/undo")
+local os = vim.loop.os_uname().sysname
+if os == "Windows_NT" then
+    set.undodir = vim.fn.expand("$HOME/AppData/Local/nvim-data/undo")
+elseif os == "Linux" then
+    set.undodir = vim.fn.expand("~/.local/share/nvim/undo")
+end
 

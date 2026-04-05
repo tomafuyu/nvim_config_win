@@ -1,3 +1,8 @@
+local hi = require("vc.hi")
+hi("NvimTreeOpenedHL", { fg = "#ffffff" })
+hi("NvimTreeNormal"  , { fg = "#bbbbbb" })
+hi("NvimTreeBookmarkHL", { undercurl = true, sp = "#88ffaa" })
+
 local function oa(bufnr)
     local api = require("nvim-tree.api")
     local nd = api.node
@@ -66,11 +71,6 @@ local function oa(bufnr)
             mk.clear()
         end
     end, "Tab (marks)")
-
-    local hi = require("vc.hi")
-    hi("NvimTreeOpenedHL", { fg = "#ffffff" })
-    hi("NvimTreeNormal"  , { fg = "#bbbbbb" })
-    hi("NvimTreeBookmarkHL", { undercurl = true, sp = "#88ffaa" })
 end
 
 return {
@@ -88,6 +88,11 @@ return {
         actions = {
             expand_all = {
                 exclude = { ".git" },
+            },
+            file_popup = {
+                open_win_config = {
+                    border = "rounded",
+                },
             },
         },
         filters = {
@@ -124,19 +129,18 @@ return {
 }
 
 --[[
-
-api.node.navigate.parent_close,     "Close Directory")
-api.node.navigate.sibling.first,    "First Sibling")
-api.node.navigate.sibling.last,     "Last Sibling")
-api.node.open.no_window_picker,     "Open: No Window Picker")
-api.node.open.replace_tree_buffer,  "Open: In Place")
-api.node.open.toggle_group_empty,   "Toggle Group Empty")
-api.tree.search_node,               "Search")
-api.node.navigate.git.next,         "Next Git")
-api.node.navigate.git.prev,         "Prev Git")
-api.tree.toggle_git_clean_filter,   "Toggle Filter: Git Clean")
-api.tree.toggle_gitignore_filter,   "Toggle Filter: Git Ignore")
-api.node.run.cmd,                   "Run Command")
+node.navigate.parent_close,     "Close Directory")
+node.navigate.sibling.first,    "First Sibling")
+node.navigate.sibling.last,     "Last Sibling")
+node.open.no_window_picker,     "Open: No Window Picker")
+node.open.replace_tree_buffer,  "Open: In Place")
+node.open.toggle_group_empty,   "Toggle Group Empty")
+tree.search_node,               "Search")
+node.navigate.git.next,         "Next Git")
+node.navigate.git.prev,         "Prev Git")
+tree.toggle_git_clean_filter,   "Toggle Filter: Git Clean")
+tree.toggle_gitignore_filter,   "Toggle Filter: Git Ignore")
+node.run.cmd,                   "Run Command")
 
 local function MyNvimTreeTrash()
     local node = api.tree.get_node_under_cursor()
@@ -149,7 +153,5 @@ local function MyNvimTreeTrash()
         })
     else print("no file") end
 end
-
 --]]
-
 

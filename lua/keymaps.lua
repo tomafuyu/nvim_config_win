@@ -41,7 +41,7 @@ nn("<Leader><", "<Cmd>tabm -1<CR>")
 nn("<Leader>>", "<Cmd>tabm +1<CR>")
 
 nn("<CR>", "i<CR><Esc>")
-nn("<Esc><Esc>","<Cmd>noh<CR>")
+nn("g<Esc>","<Cmd>noh<CR>")
 -- nn("<Leader>v", "")
 
 nn("<C-s>", "<Cmd>w<CR>")

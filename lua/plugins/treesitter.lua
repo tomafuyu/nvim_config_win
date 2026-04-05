@@ -1,3 +1,7 @@
+local hi = require("vc.hi")
+hi("TreesitterContext", { bg = "#333333" })
+hi("TreesitterContextLineNumber", { bg = "NONE" })
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -9,19 +13,13 @@ return {
                 additional_vim_regex_highlighting = { "markdown" },
             },
         },
-        config = function(_, opts)
-            require("nvim-treesitter.configs").setup(opts)
-            local hi = require("vc.hi")
-            hi("TreesitterContext", { bg = "#333333" })
-            hi("TreesitterContextLineNumber", { bg = "NONE" })
-        end
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
         opts = {
             multiwindow = true,
             separator = "~",
-        }
+        },
     },
 }
 
