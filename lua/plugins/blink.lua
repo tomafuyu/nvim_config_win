@@ -35,7 +35,7 @@ return {
                     module = "blink-cmp-dat-word",
                     opts = {
                         paths = {
-                            vim.fn.stdpath("config") .. "/google-10k-words.txt", -- https://github.com/first20hours/google-10000-english
+                            vim.fn.stdpath("config") .. "/google-10k-words.txt",
                         },
                     },
                 },
@@ -43,7 +43,7 @@ return {
         },
         appearance = {
             nerd_font_variant = "normal",
-            -- kind_icons = { },
+            -- kind_icons = {},
         },
         cmdline = {
             completion = {

@@ -1,4 +1,8 @@
 return {
-    { "willelz/badapple.nvim", cmd = "BadAppleNvim" },
+    {
+        "willelz/badapple.nvim",
+        enabled = vim.g.rich,
+        cmd = "BadAppleNvim"
+    },
 }
 

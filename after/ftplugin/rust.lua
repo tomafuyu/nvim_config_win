@@ -13,7 +13,7 @@ vim.lsp.config("rust_analyzer", {
                 },
             },
             procMacro = {
-                enable = false,
+                enable = true, -- false?
             },
         },
     },

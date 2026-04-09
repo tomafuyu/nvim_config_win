@@ -26,9 +26,38 @@
     ^x^f file name
     ^x^o omni
 
-## structure
+# g (omit cghijklruv)
 
-    - vc: vim cmd functions
+    a~align
+    t tab
+    y~yazi
+
+## leader (omit hjkl0-9)
+
+    a hop
+    b
+    c hop
+    d delete
+    e hop
+    f telescope
+    g git
+    i
+    m
+    n
+    o oil
+    p~paste
+    q
+    r
+    s hop
+    t tree
+    u
+    v
+    w~hop
+    x
+    y~yank
+    z lazy
+    ; hop
+    <>tab
 
 ## lazy
 
@@ -42,7 +71,8 @@
 
 ## google-10k-words
 
-    remove 1~3 chars words
+    https://github.com/first20hours/google-10000-english
+    removed 1~3 chars words
 
 ## ascii
 

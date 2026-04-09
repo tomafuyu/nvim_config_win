@@ -1,7 +1,11 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local hi = require("vc.hi")
-hi("NvimTreeOpenedHL", { fg = "#ffffff" })
-hi("NvimTreeNormal"  , { fg = "#bbbbbb" })
-hi("NvimTreeBookmarkHL", { undercurl = true, sp = "#88ffaa" })
+local p = require("color")
+hi("NvimTreeOpenedHL", { fg = p.white })
+hi("NvimTreeNormal", { fg = p.gray })
+hi("NvimTreeBookmarkHL", { undercurl = true, sp = p.lime })
 
 local function oa(bufnr)
     local api = require("nvim-tree.api")
@@ -78,6 +82,7 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
+    enabled = vim.g.rich,
     version = "*",
     lazy = false,
     priority = 100,

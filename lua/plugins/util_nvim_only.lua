@@ -1,3 +1,9 @@
+-- vim.g.matchup_enabled = 1
+-- vim.g.matchup_matchparen_enabled = 1
+-- vim.g.matchup_motion_enabled = 1
+-- vim.g.matchup_text_obj_enabled = 1
+vim.g.matchup_treesitter_enabled = 1
+
 return {
     {
         "cohama/lexima.vim",
@@ -25,6 +31,7 @@ return {
     },
     {
         "norcalli/nvim-colorizer.lua",
+        enabled = vim.g.rich,
         cmd = {
             "ColorizerAttachToBuffer",
             "ColorizerDetachFromBuffer",

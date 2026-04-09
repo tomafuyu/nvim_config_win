@@ -1,24 +1,5 @@
 local hi = require("vc.hi")
-
-local p = {
-    none   = "NONE",
-    white  = "#eeeeee",
-    gray   = "#a0a0a0",
-    black1 = "#111111",
-    black3 = "#333333",
-    green  = "#00dd00",
-    lime   = "#33ff55",
-    pale   = "#99ffcc",
-    cyan   = "#44eeff",
-    sky    = "#11ccff",
-    deep   = "#00bbff",
-    blue   = "#00aaee",
-    alice  = "#cceeff",
-    steel  = "#88bbdd",
-    purple = "#bb88ee",
-    pink   = "#ee88ee",
-    wheat  = "#eeddbb",
-}
+local p = require("color")
 
 hi("CursorLineNr", { fg = p.alice })
 hi("LineNr",       { fg = p.gray })

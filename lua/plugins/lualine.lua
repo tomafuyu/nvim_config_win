@@ -7,7 +7,6 @@ local c = {
     red    = "#ff7766",
     yellow = "#ddee77",
     green  = "#99ee55",
-    def    = "#ddeeff",
     blue   = "#88ccff",
     purple = "#8877ff",
 }
@@ -18,15 +17,9 @@ local t = {
         b = { fg = c.black, bg = c.graym },
         c = { fg = c.grayl, bg = c.grayd },
     },
-    insert = {
-        a = { fg = c.black, bg = c.green }
-    },
-    visual = {
-        a = { fg = c.black, bg = c.purple }
-    },
-    replace = {
-        a = { fg = c.black, bg = c.red }
-    },
+    insert = { a = { fg = c.black, bg = c.green } },
+    visual = { a = { fg = c.black, bg = c.purple } },
+    replace = { a = { fg = c.black, bg = c.red } },
     inactive = {
         a = { fg = c.grayl, bg = c.grayd },
         b = { fg = c.grayl, bg = c.black },
@@ -60,6 +53,7 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
+    enabled = vim.g.rich,
     lazy = false,
     priority = 100,
     opts = {
@@ -100,9 +94,7 @@ return {
                 { "mode", color = { gui = "bold" } },
                 "reg_recording",
             },
-            lualine_b = {
-                "branch",
-            },
+            lualine_b = { "branch" },
             lualine_c = {
                 { "", draw_empty = true, component_separators = { left = " " } },
                 {
@@ -137,7 +129,6 @@ return {
                 "progress",
             }
         },
-        -- extensions = { "lazy", "oil", "nvim-tree", },
     },
 }
 
