@@ -11,6 +11,8 @@ return {
         default_file_explorer = false,
         keymaps = {
             ["q"] = { "actions.close", mode = "n" },
+            ["K"] = { "actions.preview_scroll_up", mode = "n" },
+            ["J"] = { "actions.preview_scroll_down", mode = "n" },
         },
         float = {
             max_width = 0.8,

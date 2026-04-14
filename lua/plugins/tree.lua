@@ -82,7 +82,6 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
-    enabled = vim.g.rich,
     version = "*",
     lazy = false,
     priority = 100,

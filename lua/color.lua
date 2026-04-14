@@ -4,6 +4,7 @@ return {
     gray   = "#a0a0a0",
     black1 = "#111111",
     black3 = "#333333",
+    yellow = "#ffff88",
     green  = "#00dd00",
     lime   = "#33ff55",
     pale   = "#99ffcc",

@@ -3,7 +3,6 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
-    enabled = vim.g.rich,
     cmd = {
         "LazyGit",
         "LazyGitConfig",

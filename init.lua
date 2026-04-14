@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.g.rich = true
+-- vim.g.rich = true
 
 if vim.g.vscode then require("vsc") return end
 
@@ -12,9 +12,9 @@ require("lazy").setup{
     spec = { import = "plugins" },
 }
 
+require("highlights")
 require("options")
 require("keymaps")
-require("highlights")
 require("commands")
 
 vim.lsp.enable{

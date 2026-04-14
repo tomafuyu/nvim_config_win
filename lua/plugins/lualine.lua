@@ -39,7 +39,7 @@ local function fmt_tab(name, context)
         if vim.api.nvim_win_get_config(w).relative == "" then
             local i = vim.api.nvim_win_get_buf(w)
             local n = vim.api.nvim_buf_get_name(i)
-            n = n ~= "" and vim.fn.fnamemodify(n, ":t") or "?"
+            n = n ~= "" and vim.fn.fnamemodify(n, ":t") or "/?/"
             if (not vim.startswith(n, "NvimTree")) then
                 table.insert(bufs, n)
             end
@@ -53,7 +53,6 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
-    enabled = vim.g.rich,
     lazy = false,
     priority = 100,
     opts = {
@@ -76,7 +75,7 @@ return {
                 {
                     "tabs",
                     mode = 1,
-                    max_length = vim.o.columns,
+                    max_length = vim.o.columns*2/3,
                     fmt = fmt_tab,
                 }
             },
@@ -91,7 +90,10 @@ return {
         },
         sections = {
             lualine_a = {
-                { "mode", color = { gui = "bold" } },
+                {
+                    function() return vim.api.nvim_get_mode().mode end, -- [NOTE] will be changed by submode
+                    color = { gui = "bold" }
+                },
                 "reg_recording",
             },
             lualine_b = { "branch" },
@@ -127,7 +129,7 @@ return {
                 "fileformat",
                 "filetype",
                 "progress",
-            }
+            },
         },
     },
 }

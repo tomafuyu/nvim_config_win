@@ -47,7 +47,7 @@
     o oil
     p~paste
     q
-    r
+    r resize mode
     s hop
     t tree
     u
@@ -76,12 +76,13 @@
 
 ## ascii
 
-----------------
- !"#$%&'()*+,-./
-0123456789:;<=>?
-@ABCDEFGHIJKLMNO
-PQRSTUVWXYZ[\]^_
-`abcdefghijklmno
-pqrstuvwxyz{|}~
-----------------
+    \|0123456789abcdef
+    -+----------------
+    2| !"#$%&'()*+,-./
+    3|0123456789:;<=>?
+    4|@ABCDEFGHIJKLMNO
+    5|PQRSTUVWXYZ[\]^_
+    6|`abcdefghijklmno
+    7|pqrstuvwxyz{|}~
+    -+----------------
 

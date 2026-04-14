@@ -2,8 +2,6 @@ local set = vim.opt
 
 set.title = true
 
-set.backspace = { "indent", "eol", "start" }
-
 set.cursorline = true
 set.cursorcolumn = true
 
@@ -39,6 +37,8 @@ set.expandtab = true
 
 set.wrap = false
 set.list = true
+
+set.backspace = { "indent", "eol", "start" }
 
 -- set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 

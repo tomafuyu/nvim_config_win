@@ -10,7 +10,7 @@ return {
     },
     {
         "andymass/vim-matchup",
-        -- enabled = false,
+        enabled = false,
         opts = {
             treesitter = {
                 stopline = 500,
@@ -31,7 +31,6 @@ return {
     },
     {
         "norcalli/nvim-colorizer.lua",
-        enabled = vim.g.rich,
         cmd = {
             "ColorizerAttachToBuffer",
             "ColorizerDetachFromBuffer",

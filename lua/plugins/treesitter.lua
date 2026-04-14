@@ -1,12 +1,12 @@
 local hi = require("vc.hi")
 local p = require("color")
-hi("TreesitterContext", { bg = p.black3 })
+hi("TreesitterContext", { bg = p.black1 })
+hi("TreesitterContextBottom", { undercurl = true, sp = p.yellow })
 hi("TreesitterContextLineNumber", { bg = p.none })
 
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        enabled = vim.g.rich,
         branch = "master",
         build = ":TSUpdate",
         opts = {
@@ -18,10 +18,9 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
-        enabled = vim.g.rich,
         opts = {
             multiwindow = true,
-            separator = "~",
+            -- separator = "~",
         },
     },
 }

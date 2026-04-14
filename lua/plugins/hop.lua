@@ -3,7 +3,7 @@ return {
     version = "*",
     config = function()
         local hop = require("hop")
-        hop.setup({ keys = "fjdkslarueiwoqpvmc,x.z/;tybngh", })
+        hop.setup({ keys = "ojekilacyrdtunqsvm.p,w;/xbzfgh" })
 
         local no = require("vc.no")
         no("<Leader>c", hop.hint_char1)
