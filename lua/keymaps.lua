@@ -42,8 +42,9 @@ nn("<Leader>>", "<Cmd>tabm +1<CR>")
 
 nn("<CR>", "i<CR><Esc>")
 nn("g<Esc>","<Cmd>noh<CR>")
--- nn("<Leader>v", "")
+nn("<Leader>v", "<C-v>")
 
+nn("<C-c>", "<C-d>")
 nn("<C-s>", "<Cmd>w<CR>")
 ino("<C-s>", "<Esc><Cmd>w<CR>")
 
@@ -54,3 +55,14 @@ nn("grd", vim.diagnostic.open_float)
 nn("grc", vim.lsp.buf.declaration)
 nn("grf", vim.lsp.buf.definition)
 
+--[[
+quofz bpylw
+aiegm htsrc
+;,.vx kdnj/
+local q = { "k", "j", "l", "K", "J", "L" }
+local c = { "t", "s", "r", "T", "S", "R" }
+for i = 1, 6 do
+    no(q[i], c[i])
+    no(c[i], q[i])
+end
+--]]

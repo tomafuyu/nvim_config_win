@@ -1,9 +1,9 @@
 return {
     {
-        "wellle/targets.vim",
+        "wellle/targets.vim"
     },
     {
-        "michaeljsmith/vim-indent-object",
+        "michaeljsmith/vim-indent-object"
     },
     {
         "kylechui/nvim-surround",
@@ -14,12 +14,32 @@ return {
     },
     {
         "nvim-mini/mini.align",
-        keys = { "ga", "gA" },
+        keys = {
+            { "ga", mode = { "n", "x" } },
+            { "gA", mode = { "n", "x" } },
+        },
         opts = {},
     },
     {
+        "smoka7/hop.nvim",
+        version = "*",
+        config = function()
+            local hop = require("hop")
+            hop.setup({ keys = "ojekilacyrdtunqsvm.p,w;/xbzfgh" })
+            local no = require("vc.no")
+            no("<Leader>c", hop.hint_char1)
+            no("<Leader>w", hop.hint_words)
+            no("<Leader>W", function() hop.hint_patterns({}, "\\S\\+") end)
+            no("<Leader>;", function() hop.hint_patterns({}, "[=,;'\"<>(){}\\[\\]^$]\\+") end)
+            no("<Leader>s", hop.hint_lines_skip_whitespace)
+            no("<Leader>a", hop.hint_anywhere)
+            local nn = require("vc.nn")
+            nn("<Leader>e", function() hop.hint_lines_skip_whitespace({multi_windows = true}) end)
+        end,
+    },
+    {
         "monaqa/dial.nvim",
-        config = function (_, _)
+        config = function ()
             local a = require("dial.augend")
             require("dial.config").augends:register_group{
                 default = {
@@ -30,8 +50,7 @@ return {
                 },
             }
             local mp = require("dial.map")
-            local n = require("vc.nn")
-            n(",", function() mp.manipulate("increment", "normal") end)
+            require("vc.nn")(",", function() mp.manipulate("increment", "normal") end)
         end
     }
 }

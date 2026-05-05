@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
--- vim.g.rich = true
 
 if vim.g.vscode then require("vsc") return end
 
@@ -17,6 +16,8 @@ require("options")
 require("keymaps")
 require("commands")
 
+-- vim.treesitter.start()
+
 vim.lsp.enable{
     "lua_ls",
     "powershell_es",
@@ -24,10 +25,10 @@ vim.lsp.enable{
     "rust_analyzer",
     "pyright",
     "tinymist",
-    -- "emmet_language_server",
-    -- "emmet_ls",
+    "html",
     "cssls",
-    "ts_ls",
+    "vtsls",
+    "jsonls",
     "clangd",
     "vimls",
     -- "jdtls",

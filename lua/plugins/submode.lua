@@ -29,11 +29,12 @@ return {
         local submode = require("submode")
         submode.create("w", w)
 
-        local config = require("lualine").get_config()
-        config.sections.lualine_a[1][1] = function ()
+        local ll = require("lualine")
+        local config = ll.get_config()
+        config.tabline.lualine_z[1][1] = function ()
             return submode.mode() or vim.api.nvim_get_mode().mode
         end
-        require("lualine").setup(config)
+        ll.setup(config)
     end
 }
 

@@ -9,7 +9,10 @@ return {
     },
     version = "1.*",
     opts = {
-        keymap = { preset = "default" },
+        keymap = {
+            preset = "default",
+            ["<Enter>"] = { "accept", "fallback" },
+        },
         completion = {
             list =  {
                 max_items = 64,
@@ -54,37 +57,4 @@ return {
     },
     -- opts_extend = { "sources.default" },
 }
-
---[[
-Text = "󰉿",
-Method = "󰊕",
-Function = "󰊕",
-Constructor = "󰒓",
-
-Field = "󰜢",
-Variable = "󰆦",
-Property = "󰖷",
-
-Class = "󱡠",
-Interface = "󱡠",
-Struct = "󱡠",
-Module = "󰅩",
-
-Unit = "󰪚",
-Value = "󰦨",
-Enum = "󰦨",
-EnumMember = "󰦨",
-
-Keyword = "󰻾",
-Constant = "󰏿",
-
-Snippet = "󱄽",
-Color = "󰏘",
-File = "󰈔",
-Reference = "󰬲",
-Folder = "󰉋",
-Event = "󱐋",
-Operator = "󰪚",
-TypeParameter = "󰬛",
---]]
 

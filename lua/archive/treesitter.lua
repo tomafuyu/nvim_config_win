@@ -1,7 +1,6 @@
 local hi = require("vc.hi")
 local p = require("color")
 hi("TreesitterContext", { bg = p.black1 })
-hi("TreesitterContextBottom", { undercurl = true, sp = p.yellow })
 hi("TreesitterContextLineNumber", { bg = p.none })
 
 return {
@@ -20,7 +19,7 @@ return {
         "nvim-treesitter/nvim-treesitter-context",
         opts = {
             multiwindow = true,
-            -- separator = "~",
+            separator = "~",
         },
     },
 }

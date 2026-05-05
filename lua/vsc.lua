@@ -1,11 +1,10 @@
 -- https://github.com/vscode-neovim/vscode-neovim/issues/540
-vim.g.matchup_matchparen_deferred = 1
+-- vim.g.matchup_matchparen_deferred = 1
 
 require("config.lazy")
 require("lazy").setup({
     checker = { enabled = true, notify = false },
     spec = {
-        { import = "plugins.hophop" },
         { import = "plugins.util_vsc_too" },
     },
 })
@@ -51,8 +50,9 @@ nn("<Leader><", v"workbench.action.moveEditorLeftInGroup")
 nn("<Leader>>", v"workbench.action.moveEditorRightInGroup")
 
 
+nn("<Leader>v", "<C-v>")
 nn("<Enter>", "i<Enter><Esc>")
-nn("<Esc><Esc>","<Cmd>noh<CR>")
+nn("g<Esc>","<Cmd>noh<CR>")
 nn("<C-s>", "<Cmd>w<Enter>")
 ino("<C-s>", "<Esc><Cmd>w<Enter>")
 

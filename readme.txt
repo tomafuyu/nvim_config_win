@@ -26,7 +26,7 @@
     ^x^f file name
     ^x^o omni
 
-# g (omit cghijklruv)
+## g (omit cghijklruv)
 
     a~align
     t tab
