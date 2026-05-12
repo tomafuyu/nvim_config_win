@@ -42,12 +42,6 @@ set.backspace = { "indent", "eol", "start" }
 
 -- set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
-set.shell = "pwsh.exe"
-set.shellcmdflag = "-c"
-set.shellquote = ""
-set.shellxquote = ""
--- set.shellpipe = ">%s\\ 2>&1"
--- set.shellredir =  ">%s\\ 2>&1"
 set.modifiable = true
 
 set.undofile = true
