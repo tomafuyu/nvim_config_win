@@ -15,6 +15,7 @@ require("highlights")
 require("options")
 require("keymaps")
 require("commands")
+require("os")
 
 require("fTerm").setup()
 
