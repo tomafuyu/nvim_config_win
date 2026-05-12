@@ -20,12 +20,12 @@ set.belloff = "all"
 set.shortmess:append("F")
 
 set.termguicolors = true
-set.pumblend = 16
-set.winblend = 16
+set.pumblend = 24
+set.winblend = 24
 set.winborder = "single"
 set.cmdheight = 0
 set.showcmd = true
-set.showcmdloc = "statusline"
+set.showcmdloc = "tabline"
 
 set.shiftwidth = 4
 set.tabstop = 4

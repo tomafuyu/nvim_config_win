@@ -16,6 +16,8 @@ require("options")
 require("keymaps")
 require("commands")
 
+require("fTerm").setup()
+
 -- vim.treesitter.start()
 
 vim.lsp.enable{

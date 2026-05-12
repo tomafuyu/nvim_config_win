@@ -1,3 +1,6 @@
+local no = require("vc.no")
+local nn = require("vc.nn")
+
 return {
     {
         "wellle/targets.vim"
@@ -26,14 +29,12 @@ return {
         config = function()
             local hop = require("hop")
             hop.setup({ keys = "ojekilacyrdtunqsvm.p,w;/xbzfgh" })
-            local no = require("vc.no")
             no("<Leader>c", hop.hint_char1)
             no("<Leader>w", hop.hint_words)
             no("<Leader>W", function() hop.hint_patterns({}, "\\S\\+") end)
             no("<Leader>;", function() hop.hint_patterns({}, "[=,;'\"<>(){}\\[\\]^$]\\+") end)
             no("<Leader>s", hop.hint_lines_skip_whitespace)
             no("<Leader>a", hop.hint_anywhere)
-            local nn = require("vc.nn")
             nn("<Leader>e", function() hop.hint_lines_skip_whitespace({multi_windows = true}) end)
         end,
     },
@@ -50,7 +51,7 @@ return {
                 },
             }
             local mp = require("dial.map")
-            require("vc.nn")(",", function() mp.manipulate("increment", "normal") end)
+            nn(",", function() mp.manipulate("increment", "normal") end)
         end
     }
 }

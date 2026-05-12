@@ -72,6 +72,7 @@ return {
                     fmt = fmt_tab,
                 }
             },
+            lualine_x = { "%S" }, -- set showcmd, showcmdloc
             lualine_y = { "reg_recording" },
             lualine_z = {
                 {
@@ -82,7 +83,6 @@ return {
         },
         sections = {
             lualine_a = {
-                "branch",
                 {
                     "filename",
                     path = 1,
@@ -103,13 +103,13 @@ return {
                     symbols = { alternate_file = "" },
                     buffers_color = { active = { fg = c.white, gui = "bold" } },
                 },
-                "%S", -- set showcmd, showcmdloc
             },
             lualine_x = {
+                { "selectioncount", fmt = function(sc) return "<" .. sc .. ">" end},
                 "searchcount",
-                "selectioncount",
                 "location",
-                "%B",
+                "progress",
+                { "%B", fmt = function(b) return "0x" .. b end },
             },
             lualine_y = {
                 "diagnostics",
@@ -119,10 +119,10 @@ return {
                 },
             },
             lualine_z = {
+                "filetype",
                 { "encoding", show_bomb = true },
                 "fileformat",
-                "filetype",
-                "progress",
+                "branch",
             },
         },
     },

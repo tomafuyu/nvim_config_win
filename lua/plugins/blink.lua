@@ -31,11 +31,12 @@ return {
         -- signature = {},
         fuzzy = { implementation = "prefer_rust_with_warning" },
         sources = {
-            default = { "lsp", "path", "snippets", "datword", "buffer" },
+            default = { "lsp", "path", "snippets", "dw", "buffer" },
             providers = {
-                datword = {
-                    name = "gglw",
+                dw = {
+                    name = "dw",
                     module = "blink-cmp-dat-word",
+                    score_offset = -16,
                     opts = {
                         paths = {
                             vim.fn.stdpath("config") .. "/google-10k-words.txt",
