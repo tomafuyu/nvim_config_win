@@ -28,7 +28,7 @@ return {
         version = "*",
         config = function()
             local hop = require("hop")
-            hop.setup({ keys = "ojekilacyrdtunqsvm.p,w;/xbzfgh" })
+            hop.setup({ keys = "ntcshmprjklwfbzxyuovgaied" })
             no("<Leader>c", hop.hint_char1)
             no("<Leader>w", hop.hint_words)
             no("<Leader>W", function() hop.hint_patterns({}, "\\S\\+") end)

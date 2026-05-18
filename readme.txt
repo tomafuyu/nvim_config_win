@@ -51,7 +51,7 @@
     s hop
     t tree
     u
-    v
+    v ^v
     w~hop
     x
     y~yank

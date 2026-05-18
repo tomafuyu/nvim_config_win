@@ -49,5 +49,3 @@ nn("grd", vim.diagnostic.open_float)
 nn("grc", vim.lsp.buf.declaration)
 nn("grf", vim.lsp.buf.definition)
 
--- vim.opt.langmap = "nj,jn,tk,kt,cl,lc,NJ,JN,TK,KT,CL,LC"
-

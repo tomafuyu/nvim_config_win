@@ -105,7 +105,7 @@ return {
                 },
             },
             lualine_x = {
-                { "selectioncount", fmt = function(sc) return "<" .. sc .. ">" end},
+                { "selectioncount", fmt = function(sc) return sc == "" and "" or "<" .. sc .. ">" end},
                 "searchcount",
                 "location",
                 "progress",

@@ -3,7 +3,6 @@ vim.g.maplocalleader = "\\"
 
 if vim.g.vscode then require("vsc") return end
 
-require("vc.nn")("<Leader>z", "<Cmd>Lazy<CR>")
 require("config.lazy")
 require("lazy").setup{
     ui = { border = "double" },
@@ -15,7 +14,7 @@ require("highlights")
 require("options")
 require("keymaps")
 require("commands")
-require("os")
+require("osset")
 
 require("fTerm").setup()
 

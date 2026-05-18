@@ -31,7 +31,7 @@ return {
 
         local ll = require("lualine")
         local config = ll.get_config()
-        config.tabline.lualine_z[1][1] = function ()
+        config.tabline.lualine_z[1][1] = function()
             return submode.mode() or vim.api.nvim_get_mode().mode
         end
         ll.setup(config)
