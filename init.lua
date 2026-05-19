@@ -16,7 +16,7 @@ require("keymaps")
 require("commands")
 require("osset")
 
-require("fTerm").setup()
+-- require("fTerm").setup()
 
 -- vim.treesitter.start()
 
