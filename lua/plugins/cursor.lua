@@ -7,7 +7,7 @@ return {
         legacy_computing_symbols_support = false,
         smear_insert_mode = false,
         stiffness = .8,
-        damping = .95,
+        damping = .9,
     },
 }
 

@@ -68,7 +68,7 @@ return {
                 {
                     "tabs",
                     mode = 1,
-                    max_length = vim.o.columns*2/3,
+                    max_length = vim.o.columns*29/32,
                     fmt = fmt_tab,
                 }
             },

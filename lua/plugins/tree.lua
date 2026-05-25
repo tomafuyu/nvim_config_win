@@ -1,7 +1,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local hi = require("vc.hi")
+local hi = require("vc").hi
 local p = require("color")
 hi("NvimTreeOpenedHL", { fg = p.white })
 hi("NvimTreeNormal", { fg = p.gray })

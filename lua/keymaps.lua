@@ -1,7 +1,8 @@
-local no = require("vc.no")
-local nn = require("vc.nn")
-local xn = require("vc.xn")
-local ino = require("vc.ino")
+local vc = require("vc")
+local no = vc.no
+local nn = vc.nn
+local xn = vc.xn
+local ino = vc.ino
 
 xn(">", ">gv")
 xn("<", "<gv")

@@ -1,4 +1,4 @@
-local cmd = require("vc.cmd")
+local cmd = require("vc").cmd
 
 cmd("Th", "vertical terminal")
 cmd("Tl", "belowright vertical terminal")

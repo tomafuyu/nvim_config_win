@@ -1,4 +1,4 @@
-local hi = require("vc.hi")
+local hi = require("vc").hi
 local p = require("color")
 
 hi("CursorLineNr", { fg = p.alice })

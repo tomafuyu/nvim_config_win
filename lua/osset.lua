@@ -1,4 +1,4 @@
-local no = require("vc.no")
+local no = require("vc").no
 local set = vim.opt
 local os = vim.loop.os_uname().sysname
 

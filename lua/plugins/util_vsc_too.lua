@@ -1,5 +1,6 @@
-local no = require("vc.no")
-local nn = require("vc.nn")
+local vc = require("vc")
+local no = vc.no
+local nn = vc.nn
 
 return {
     {
@@ -40,7 +41,7 @@ return {
     },
     {
         "monaqa/dial.nvim",
-        config = function ()
+        config = function()
             local a = require("dial.augend")
             require("dial.config").augends:register_group{
                 default = {

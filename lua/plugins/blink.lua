@@ -1,4 +1,4 @@
-local hi = require("vc.hi")
+local hi = require("vc").hi
 hi("BlinkCmpMenuBorder", { link = "FloatBorder" })
 
 return {

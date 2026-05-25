@@ -1,4 +1,4 @@
-require("vc.hi")("TelescopeBorder", { fg = require("color").blue })
+require("vc").hi("TelescopeBorder", { fg = require("color").blue })
 
 return {
     {
