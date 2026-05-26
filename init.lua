@@ -36,3 +36,5 @@ vim.lsp.enable{
     -- "jdtls",
 }
 
+vim.opt.langmap = "sl,ls,SL,LS"
+

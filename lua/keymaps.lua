@@ -8,6 +8,11 @@ xn(">", ">gv")
 xn("<", "<gv")
 
 no("X", "\"_x")
+no("<Leader>d", "\"+d")
+no("<Leader>y", "\"+y")
+no("<Leader>Y", "\"+Y")
+no("<Leader>p", "\"+p")
+no("<Leader>P", "\"+P")
 
 no("gk", "H")
 no("gj", "L")

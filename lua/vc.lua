@@ -1,3 +1,5 @@
+-- vim commands
+
 local M = {}
 
 function M.no(lhs, rhs, opts)
