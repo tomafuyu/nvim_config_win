@@ -7,6 +7,8 @@ local ino = vc.ino
 xn(">", ">gv")
 xn("<", "<gv")
 
+nn("gG", "ggVG")
+
 no("X", "\"_x")
 no("<Leader>d", "\"+d")
 no("<Leader>y", "\"+y")

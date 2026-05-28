@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+-- vim.opt.langmap = "sl,ls,SL,LS"
+-- vim.opt.langmap = "al,la,AL,LA"
 
 if vim.g.vscode then require("vsc") return end
 
@@ -35,6 +37,4 @@ vim.lsp.enable{
     "vimls",
     -- "jdtls",
 }
-
-vim.opt.langmap = "sl,ls,SL,LS"
 
