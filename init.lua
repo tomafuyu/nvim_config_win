@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
--- vim.opt.langmap = "sl,ls,SL,LS"
 -- vim.opt.langmap = "al,la,AL,LA"
 
 if vim.g.vscode then require("vsc") return end
@@ -18,7 +17,7 @@ require("keymaps")
 require("commands")
 require("osset")
 
--- require("fTerm").setup()
+require("fTerm").setup()
 
 -- vim.treesitter.start()
 

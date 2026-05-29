@@ -21,16 +21,18 @@ xn(">", ">gv")
 xn("<", "<gv")
 
 no("X", "\"_x")
-no("<Leader>d", "\"*d")
-no("<Leader>y", "\"*y")
-no("<Leader>Y", "\"*Y")
-no("<Leader>p", "\"*p")
-no("<Leader>P", "\"*P")
+no("<Leader>d", "\"+d")
+no("<Leader>y", "\"+y")
+no("<Leader>Y", "\"+Y")
+no("<Leader>p", "\"+p")
+no("<Leader>P", "\"+P")
 
 no("gk", "H")
 no("gj", "L")
 no("gh", "^")
 no("gl", "$")
+
+nn("U", "<C-r>")
 
 no("+", "<C-a>")
 no("-", "<C-x>")

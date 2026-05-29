@@ -6,7 +6,6 @@ local ino = vc.ino
 
 xn(">", ">gv")
 xn("<", "<gv")
-
 nn("gG", "ggVG")
 
 no("X", "\"_x")
@@ -21,15 +20,13 @@ no("gj", "L")
 no("gh", "^")
 no("gl", "$")
 
+nn("U", "<C-r>")
+
 no("+", "<C-a>")
 no("-", "<C-x>")
 
 nn("<C-k>", "<Cmd>move -2<CR>")
 nn("<C-j>", "<Cmd>move +1<CR>")
-
-nn("H", "gT")
-nn("L", "gt")
-for i = 1, 9 do nn("<Leader>"..i, i.."gt") end
 
 nn("<Leader>k", "<C-w>k")
 nn("<Leader>j", "<C-w>j")
@@ -39,6 +36,10 @@ nn("<Leader>K", "<C-w>K")
 nn("<Leader>J", "<C-w>J")
 nn("<Leader>H", "<C-w>H")
 nn("<Leader>L", "<C-w>L")
+
+nn("H", "gT")
+nn("L", "gt")
+for i = 1, 9 do nn("<Leader>"..i, i.."gt") end
 nn("gt", "<Cmd>tabc<CR>")
 nn("<Leader><", "<Cmd>tabm -1<CR>")
 nn("<Leader>>", "<Cmd>tabm +1<CR>")

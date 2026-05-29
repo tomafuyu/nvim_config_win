@@ -3,7 +3,7 @@ local M = {}
 local buf, win
 
 local default = {
-    key = "<C-t>",
+    key = "<Leader><Leader>t",
     width = .8,
     height = .8,
     border = "double",
@@ -51,7 +51,7 @@ function M.setup(opts)
     winOpts.col = math.floor((vim.o.columns - winOpts.width) / 2)
     winOpts.border = opts.border
 
-    vim.keymap.set("n", opts.key, M.toggle)
+    vim.keymap.set("n", opts.key, M.toggle, { desc = "Toggle fTerm" })
 
     local group = vim.api.nvim_create_augroup("fTermEvents", { clear = true })
     vim.api.nvim_create_autocmd("TermClose", {
