@@ -33,7 +33,7 @@ set.softtabstop = 4
 set.autoindent = true
 set.smartindent = true
 set.smarttab = true
-set.expandtab = true
+-- set.expandtab = true
 
 set.wrap = false
 set.list = true

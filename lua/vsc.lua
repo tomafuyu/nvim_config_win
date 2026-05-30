@@ -3,10 +3,10 @@
 
 require("config.lazy")
 require("lazy").setup({
-    checker = { enabled = true, notify = false },
-    spec = {
-        { import = "plugins.util_vsc_too" },
-    },
+	checker = { enabled = true, notify = false },
+	spec = {
+		{ import = "plugins.util_vsc_too" },
+	},
 })
 
 local vscode = require("vscode")
