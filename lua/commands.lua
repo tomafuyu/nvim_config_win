@@ -9,8 +9,8 @@ cmd("CHLsp", "checkhealth vim.lsp")
 cmd("CHTreesitter", "checkhealth vim.treesitter")
 
 vim.cmd[[
-autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
-set viewoptions-=options
+	autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+	autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
+	set viewoptions-=options
 ]]
 

@@ -2,6 +2,23 @@
 
 local M = {}
 
+function M.m(lhs, rhs, opts)
+	opts = opts or {}
+	vim.keymap.set("", lhs, rhs, opts)
+end
+
+function M.om(lhs, rhs, opts)
+	opts = opts or {}
+	vim.keymap.set("o", lhs, rhs, opts)
+end
+
+function M.nm(lhs, rhs, opts)
+	opts = opts or {}
+	vim.keymap.set("n", lhs, rhs, opts)
+end
+
+-- noremap
+
 function M.no(lhs, rhs, opts)
 	opts = opts or {}
 	opts.noremap = true

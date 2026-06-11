@@ -1,5 +1,7 @@
 local hi = require("vc").hi
-hi("BlinkCmpMenuBorder", { link = "FloatBorder" })
+local c = require("color")
+hi("BlinkCmpMenuBorder", { bg = c.float, link = "FloatBorder" })
+hi("BlinkCmpMenu", { bg = c.float })
 
 return {
 	"saghen/blink.cmp",
@@ -10,8 +12,7 @@ return {
 	version = "1.*",
 	opts = {
 		keymap = {
-			preset = "default",
-			["<Enter>"] = { "accept", "fallback" },
+			preset = "enter",
 		},
 		completion = {
 			list =  {

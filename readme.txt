@@ -86,3 +86,7 @@
 	7|pqrstuvwxyz{|}~
 	-+----------------
 
+## idea
+
+nn qq q
+

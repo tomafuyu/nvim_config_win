@@ -1,8 +1,15 @@
 local vc = require("vc")
+local m = vc.m
 local no = vc.no
 local nn = vc.nn
 local xn = vc.xn
+local om = vc.om
 local ino = vc.ino
+
+m("<Up>", "k")
+m("<Down>", "j")
+m("<Left>", "h")
+m("<Right>", "l")
 
 xn(">", ">gv")
 xn("<", "<gv")
@@ -57,4 +64,6 @@ nn("&", "<Cmd>qa<CR>")
 nn("grd", vim.diagnostic.open_float)
 nn("grc", vim.lsp.buf.declaration)
 nn("grf", vim.lsp.buf.definition)
+
+nn("<Leader><Leader>c", "i<C-r>=<C-r>0<CR>")
 

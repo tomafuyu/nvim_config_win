@@ -3,7 +3,7 @@ local M = {}
 local buf, win
 
 local default = {
-	key = "<Leader><Leader>t",
+	key = "<Leader>:",
 	width = .8,
 	height = .8,
 	border = "double",

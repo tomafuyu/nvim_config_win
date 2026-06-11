@@ -4,5 +4,6 @@ return {
 		cmd = "BadAppleNvim"
 	},
 	-- { "alec-gibson/nvim-tetris", cmd = "Tetris" }
+	-- { "mattn/vim-xeyes" }
 }
 

@@ -11,7 +11,7 @@ return {
 	},
 	{
 		"kylechui/nvim-surround",
-		version = "^3.0.0",
+		version = "^4.0.0",
 		opts = {
 			move_cursor = "sticky",
 		},
@@ -29,7 +29,7 @@ return {
 		version = "*",
 		config = function()
 			local hop = require("hop")
-			hop.setup({ keys = "ntcshmprjklwfbzxyuovgaied" })
+			hop.setup({ keys = "cndhetisalvmgrxpujok" })
 			no("<Leader>c", hop.hint_char1)
 			no("<Leader>w", hop.hint_words)
 			no("<Leader>W", function() hop.hint_patterns({}, "\\S\\+") end)

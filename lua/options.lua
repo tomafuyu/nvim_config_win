@@ -22,7 +22,8 @@ set.shortmess:append("F")
 set.termguicolors = true
 set.pumblend = 24
 set.winblend = 24
-set.winborder = "single"
+set.pumborder = "rounded"
+set.winborder = "rounded"
 set.cmdheight = 0
 set.showcmd = true
 set.showcmdloc = "tabline"

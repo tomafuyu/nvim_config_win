@@ -17,6 +17,8 @@ local nn = vc.nn
 local xn = vc.xn
 local ino = vc.ino
 
+-- nn("<Leader><Leader>c", "i<C-r>=<C-r>0<CR>")
+
 xn(">", ">gv")
 xn("<", "<gv")
 
