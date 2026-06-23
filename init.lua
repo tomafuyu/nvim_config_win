@@ -1,15 +1,15 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- vim.cmd[[
--- 	"nn qq q
--- 	nmap e g
--- 	nn ee gg
--- 	nn E G
--- 	omap e g
--- 	ono ee gg
--- 	ono E G
--- ]]
+-- Cut worD Edit
+vim.cmd[[
+	no c d
+	no C D
+	no d e
+	no D E
+	no e c
+	no E C
+]]
 
 if vim.g.vscode then require("vsc") return end
 

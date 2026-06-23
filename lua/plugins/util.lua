@@ -2,6 +2,8 @@ local vc = require("vc")
 local no = vc.no
 local nn = vc.nn
 
+vim.g.nvim_surround_no_normal_mappings = 0
+
 return {
 	{
 		"wellle/targets.vim"
@@ -12,6 +14,16 @@ return {
 	{
 		"kylechui/nvim-surround",
 		version = "^4.0.0",
+		lazy = false,
+		keys = {
+			{ "ys", "<Plug>(nvim-surround-normal)" },
+			{ "yss", "<Plug>(nvim-surround-normal-cur)" },
+			{ "yS", "<Plug>(nvim-surround-normal-line)" },
+			{ "ySS", "<Plug>(nvim-surround-normal-cur-line)" },
+			{ "cs", "<Plug>(nvim-surround-delete)" },
+			{ "es", "<Plug>(nvim-surround-change)" },
+			{ "eS", "<Plug>(nvim-surround-change-line)" },
+		},
 		opts = {
 			move_cursor = "sticky",
 		},

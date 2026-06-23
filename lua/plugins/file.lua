@@ -1,4 +1,5 @@
-require("vc").hi("TelescopeBorder", { fg = require("color").blue })
+local c = require("color")
+require("vc").hi("TelescopeBorder", { fg = c.blue })
 
 return {
 	{
@@ -21,7 +22,7 @@ return {
 				border = "double",
 				preview_split = "right",
 				win_options = {
-					winblend = 28,
+					winblend = c.blend,
 				},
 			},
 		},
@@ -47,10 +48,13 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = { "Yazi" },
 		keys = {
-			{ "gy", "<Cmd>Yazi<CR>", desc = "current file" },
-			{ "gY", "<Cmd>Yazi cwd<CR>", desc = "nvim's working directory" },
+			{ "<Leader>y", "<Cmd>Yazi<CR>", desc = "current file" },
+			{ "<Leader>Y", "<Cmd>Yazi cwd<CR>", desc = "nvim's working directory" },
 		},
-		opts = {},
+		opts = {
+			yazi_floating_window_border = "double",
+			-- yazi_floating_window_winblend = c.blend,
+		},
 	},
 }
 

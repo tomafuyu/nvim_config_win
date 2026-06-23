@@ -1,4 +1,5 @@
 local set = vim.opt
+local c = require('color')
 
 set.title = true
 
@@ -13,15 +14,15 @@ set.ignorecase = true
 set.matchtime = 1
 set.modeline = true
 set.number = true
--- set.relativenumber = true
+set.relativenumber = true
 -- set.signcolumn = "yes:1"
 
 set.belloff = "all"
 set.shortmess:append("F")
 
 set.termguicolors = true
-set.pumblend = 24
-set.winblend = 24
+set.pumblend = c.blend
+set.winblend = c.blend
 set.pumborder = "rounded"
 set.winborder = "rounded"
 set.cmdheight = 0

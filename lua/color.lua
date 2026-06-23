@@ -1,4 +1,5 @@
 return {
+	blend  = 24,
 	none   = "NONE",
 	white  = "#eeeeee",
 	gray   = "#a0a0a0",

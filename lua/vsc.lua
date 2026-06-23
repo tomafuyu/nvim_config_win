@@ -5,7 +5,7 @@ require("config.lazy")
 require("lazy").setup({
 	checker = { enabled = true, notify = false },
 	spec = {
-		{ import = "plugins.util_vsc_too" },
+		{ import = "plugins.util" },
 	},
 })
 
@@ -21,18 +21,13 @@ local ino = vc.ino
 
 xn(">", ">gv")
 xn("<", "<gv")
+nn("gG", "ggVG")
 
 no("X", "\"_x")
-no("<Leader>d", "\"+d")
-no("<Leader>y", "\"+y")
-no("<Leader>Y", "\"+Y")
-no("<Leader>p", "\"+p")
-no("<Leader>P", "\"+P")
-
-no("gk", "H")
-no("gj", "L")
-no("gh", "^")
-no("gl", "$")
+no("gy", "\"+y")
+no("gY", "\"+Y")
+no("gp", "\"+p")
+no("gP", "\"+P")
 
 nn("U", "<C-r>")
 
@@ -45,14 +40,14 @@ nn("<C-j>", v"editor.action.moveLinesDownAction")
 nn("H", v"workbench.action.previousEditor")
 nn("L", v"workbench.action.nextEditor")
 
-nn("<Leader>k", v"workbench.action.navigateUp")
-nn("<Leader>j", v"workbench.action.navigateDown")
-nn("<Leader>h", v"workbench.action.navigateLeft")
-nn("<Leader>l", v"workbench.action.navigateRight")
-nn("<Leader>H", v"workbench.action.moveEditorToLeftGroup")
-nn("<Leader>L", v"workbench.action.moveEditorToRightGroup")
-nn("<Leader><", v"workbench.action.moveEditorLeftInGroup")
-nn("<Leader>>", v"workbench.action.moveEditorRightInGroup")
+nn("gk", v"workbench.action.navigateUp")
+nn("gj", v"workbench.action.navigateDown")
+nn("gh", v"workbench.action.navigateLeft")
+nn("gl", v"workbench.action.navigateRight")
+nn("gH", v"workbench.action.moveEditorToLeftGroup")
+nn("gL", v"workbench.action.moveEditorToRightGroup")
+nn("g<", v"workbench.action.moveEditorLeftInGroup")
+nn("g>", v"workbench.action.moveEditorRightInGroup")
 
 
 nn("<Leader>v", "<C-v>")
