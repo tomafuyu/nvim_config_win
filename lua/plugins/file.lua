@@ -48,8 +48,8 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = { "Yazi" },
 		keys = {
-			{ "<Leader>y", "<Cmd>Yazi<CR>", desc = "current file" },
-			{ "<Leader>Y", "<Cmd>Yazi cwd<CR>", desc = "nvim's working directory" },
+			{ "<Leader>y", "<Cmd>Yazi<CR>" },
+			{ "<Leader>Y", "<Cmd>Yazi cwd<CR>" },
 		},
 		opts = {
 			yazi_floating_window_border = "double",

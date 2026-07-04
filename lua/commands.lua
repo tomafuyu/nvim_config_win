@@ -5,8 +5,8 @@ cmd("Tl", "belowright vertical terminal")
 cmd("Tk", "horizontal terminal")
 cmd("Tj", "belowright terminal")
 cmd("Tt", "tab terminal")
-cmd("CHLsp", "checkhealth vim.lsp")
-cmd("CHTreesitter", "checkhealth vim.treesitter")
+cmd("CHL", "checkhealth vim.lsp")
+cmd("CHT", "checkhealth vim.treesitter")
 
 vim.cmd[[
 	autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif

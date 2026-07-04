@@ -53,6 +53,7 @@ return {
 	},
 	{
 		"monaqa/dial.nvim",
+		keys = { "<Leader>," },
 		config = function()
 			local a = require("dial.augend")
 			require("dial.config").augends:register_group{
@@ -64,7 +65,7 @@ return {
 				},
 			}
 			local mp = require("dial.map")
-			nn(",", function() mp.manipulate("increment", "normal") end)
+			nn("<Leader>,", function() mp.manipulate("increment", "normal") end)
 		end
 	}
 }

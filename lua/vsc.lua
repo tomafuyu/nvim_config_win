@@ -10,14 +10,24 @@ require("lazy").setup({
 })
 
 local vscode = require("vscode")
-local function v(cmd) return function() vscode.action(cmd) end end
+local function v(cmd)
+	return function() vscode.action(cmd) end
+end
+
 local vc = require("vc")
+local m = vc.m
 local no = vc.no
 local nn = vc.nn
 local xn = vc.xn
 local ino = vc.ino
 
--- nn("<Leader><Leader>c", "i<C-r>=<C-r>0<CR>")
+-- Cut worD Edit
+m("c", "d")
+m("C", "D")
+m("d", "e")
+m("D", "E")
+m("e", "c")
+m("E", "C")
 
 xn(">", ">gv")
 xn("<", "<gv")
@@ -48,7 +58,6 @@ nn("gH", v"workbench.action.moveEditorToLeftGroup")
 nn("gL", v"workbench.action.moveEditorToRightGroup")
 nn("g<", v"workbench.action.moveEditorLeftInGroup")
 nn("g>", v"workbench.action.moveEditorRightInGroup")
-
 
 nn("<Leader>v", "<C-v>")
 nn("<Enter>", "i<Enter><Esc>")

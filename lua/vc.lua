@@ -2,6 +2,12 @@
 
 local M = {}
 
+local function getNoreOpts(opts)
+	opts = opts or {}
+	opts.noremap = true
+	return opts
+end
+
 function M.m(lhs, rhs, opts)
 	opts = opts or {}
 	vim.keymap.set("", lhs, rhs, opts)
@@ -17,29 +23,23 @@ function M.nm(lhs, rhs, opts)
 	vim.keymap.set("n", lhs, rhs, opts)
 end
 
--- noremap
-
 function M.no(lhs, rhs, opts)
-	opts = opts or {}
-	opts.noremap = true
+	opts = getNoreOpts(opts)
 	vim.keymap.set("", lhs, rhs, opts)
 end
 
 function M.nn(lhs, rhs, opts)
-	opts = opts or {}
-	opts.noremap = true
+	opts = getNoreOpts(opts)
 	vim.keymap.set("n", lhs, rhs, opts)
 end
 
 function M.xn(lhs, rhs, opts)
-	opts = opts or {}
-	opts.noremap = true
+	opts = getNoreOpts(opts)
 	vim.keymap.set("x", lhs, rhs, opts)
 end
 
 function M.ino(lhs, rhs, opts)
-	opts = opts or {}
-	opts.noremap = true
+	opts = getNoreOpts(opts)
 	vim.keymap.set("i", lhs, rhs, opts)
 end
 

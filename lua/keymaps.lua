@@ -1,13 +1,19 @@
 local vc = require("vc")
--- local m = vc.m
-local nm = vc.nm
+local m = vc.m
+-- local nm = vc.nm
 -- local om = vc.om
 local no = vc.no
 local nn = vc.nn
 local xn = vc.xn
 local ino = vc.ino
 
--- nm("e", "d")
+-- Cut worD Edit
+m("c", "d")
+m("C", "D")
+m("d", "e")
+m("D", "E")
+m("e", "c")
+m("E", "C")
 
 xn(">", ">gv")
 xn("<", "<gv")

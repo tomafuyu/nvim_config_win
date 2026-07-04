@@ -10,6 +10,7 @@ return {
 		"rafamadriz/friendly-snippets",
 	},
 	version = "1.*",
+	event = "VeryLazy",
 	opts = {
 		keymap = {
 			preset = "enter",
