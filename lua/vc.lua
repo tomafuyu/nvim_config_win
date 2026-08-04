@@ -1,4 +1,4 @@
--- vim commands
+-- Vim Commands
 
 local M = {}
 

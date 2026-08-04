@@ -6,10 +6,27 @@ vim.g.nvim_surround_no_normal_mappings = 0
 
 return {
 	{
-		"wellle/targets.vim"
+		"michaeljsmith/vim-indent-object"
 	},
 	{
-		"michaeljsmith/vim-indent-object"
+		"nvim-mini/mini.ai",
+		config = function()
+			local ai = require('mini.ai')
+			ai.setup{
+				custom_textobjects = {
+					k = ai.gen_spec.pair("「", "」"),
+					j = ai.gen_spec.pair("（", "）"),
+				},
+			}
+		end
+	},
+	{
+		"nvim-mini/mini.align",
+		keys = {
+			{ "ga", mode = { "n", "x" } },
+			{ "gA", mode = { "n", "x" } },
+		},
+		opts = {},
 	},
 	{
 		"kylechui/nvim-surround",
@@ -26,22 +43,29 @@ return {
 		},
 		opts = {
 			move_cursor = "sticky",
+			surrounds = {
+				["k"] = {
+					add = { "「", "」" },
+					find = "「.-」",
+					delete = "^(「)().-(」)()$",
+					change = { target = "^(「)().-(」)()$", },
+				},
+				["j"] = {
+					add = { "（", "）" },
+					find = "（.-）",
+					delete = "^(（)().-(）)()$",
+					change = { target = "^(（)().-(）)()$", },
+				},
+			},
 		},
-	},
-	{
-		"nvim-mini/mini.align",
-		keys = {
-			{ "ga", mode = { "n", "x" } },
-			{ "gA", mode = { "n", "x" } },
-		},
-		opts = {},
 	},
 	{
 		"smoka7/hop.nvim",
 		version = "*",
-		config = function()
+		opts = { keys = "cndhetisalvmgrxpujok" },
+		config = function(_, opts)
 			local hop = require("hop")
-			hop.setup({ keys = "cndhetisalvmgrxpujok" })
+			hop.setup(opts)
 			no("<Leader>c", hop.hint_char1)
 			no("<Leader>w", hop.hint_words)
 			no("<Leader>W", function() hop.hint_patterns({}, "\\S\\+") end)

@@ -7,6 +7,7 @@ cmd("Tj", "belowright terminal")
 cmd("Tt", "tab terminal")
 cmd("CHL", "checkhealth vim.lsp")
 cmd("CHT", "checkhealth vim.treesitter")
+cmd("FindWide", "/[^\x01-\x7E]")
 
 vim.cmd[[
 	autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif

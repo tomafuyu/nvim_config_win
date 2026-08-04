@@ -6,6 +6,7 @@ return {
 	black1 = "#111111",
 	black3 = "#333333",
 	float  = "#001122",
+	navy   = "#001122",
 	yellow = "#ffff88",
 	green  = "#00dd00",
 	lime   = "#33ff55",

@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+require("keymaps")
+
 if vim.g.vscode then require("vsc") return end
 
 require("config.lazy")
@@ -12,11 +14,10 @@ require("lazy").setup{
 
 require("highlights")
 require("options")
-require("keymaps")
 require("commands")
 require("osset")
 
-require("fTerm").setup{}
+-- require("fTerm").setup{}
 
 -- vim.treesitter.start()
 

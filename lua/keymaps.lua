@@ -26,8 +26,29 @@ no("gY", "\"+Y")
 no("gp", "\"+p")
 no("gP", "\"+P")
 
+nn("U", "<C-r>")
+
+no("+", "<C-a>")
+no("-", "<C-x>")
+
+nn("<CR>", "i<CR><Esc>")
+nn("g<Esc>","<Cmd>noh<CR>")
+nn("<Leader>v", "<C-v>")
+
+if vim.g.vscode then return end
+
 no("gt", "H")
 no("gb", "L")
+
+nn("<C-k>", "<Cmd>move -2<CR>")
+nn("<C-j>", "<Cmd>move +1<CR>")
+
+nn("H", "gT")
+nn("L", "gt")
+for i = 1, 9 do nn("g"..i, i.."gt") end
+nn("gT", "<Cmd>tabc<CR>")
+nn("g<", "<Cmd>tabm -1<CR>")
+nn("g>", "<Cmd>tabm +1<CR>")
 
 nn("gk", "<C-w>k")
 nn("gj", "<C-w>j")
@@ -38,29 +59,12 @@ nn("gJ", "<C-w>J")
 nn("gH", "<C-w>H")
 nn("gL", "<C-w>L")
 
-nn("<C-k>", "<Cmd>move -2<CR>")
-nn("<C-j>", "<Cmd>move +1<CR>")
-
-nn("U", "<C-r>")
-
-no("+", "<C-a>")
-no("-", "<C-x>")
-
-nn("H", "gT")
-nn("L", "gt")
-for i = 1, 9 do nn("g"..i, i.."gt") end
-nn("gT", "<Cmd>tabc<CR>")
-nn("g<", "<Cmd>tabm -1<CR>")
-nn("g>", "<Cmd>tabm +1<CR>")
-
-nn("<CR>", "i<CR><Esc>")
-nn("g<Esc>","<Cmd>noh<CR>")
-nn("<Leader>v", "<C-v>")
-
 nn("<C-s>", "<Cmd>w<CR>")
 ino("<C-s>", "<Esc><Cmd>w<CR>")
 
-nn("&", "<Cmd>qa<CR>")
+nn("&", "<Cmd>q<CR>")
+nn("<Leader>&", "<Cmd>tabc<CR>")
+nn("<Leader><Leader>&", "<Cmd>qa<CR>")
 
 -- h lsp.txt
 nn("grd", vim.diagnostic.open_float)

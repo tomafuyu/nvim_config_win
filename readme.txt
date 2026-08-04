@@ -26,16 +26,21 @@ no nn vn xn snor ono no ino ln cno tno
 ^x^f file name
 ^x^o omni
 
-## leader (omit hjkl0-9)
+## leader
 
 a hop
-b
+b telescope
 c hop
 d
 e hop
 f telescope
-g git
+g telescope
+G git
+h telescope
 i
+j
+k
+l
 m
 n
 o oil
@@ -50,8 +55,9 @@ w~hop
 x
 y~yazi
 z lazy
+, dail
 ; hop
-<>tab
+<>
 
 ## lazy
 
@@ -83,4 +89,11 @@ removed 1~3 chars words
 ## idea
 
 nn qq q
+
+:h 'guicursor'
+https://github.com/RRethy/vim-illuminate
+
+move cmdline prompt by [[, ]]
+https://neovim.io/doc/user/terminal/#terminal-osc133
+
 

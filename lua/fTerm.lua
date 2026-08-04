@@ -1,19 +1,25 @@
 local M = {}
 
 local buf, win
-
 local default = {
 	key = "<Leader>:",
 	width = .8,
 	height = .8,
 	border = "double",
 }
-
-local winOpts = { relative = "editor" }
+local winOpts = {
+	relative = "editor"
+}
 
 local function isValidPercentage(s)
 	return 0 < s or s <= 1
 end
+
+-- function M.close()
+-- 	if buf == vim.api.nvim_get_current_buf() then
+-- 		vim.api.nvim_win_close(win, false)
+-- 	end
+-- end
 
 function M.toggle()
 	if buf == vim.api.nvim_get_current_buf() then
@@ -52,6 +58,7 @@ function M.setup(opts)
 	winOpts.border = opts.border
 
 	vim.keymap.set("n", opts.key, M.toggle, { desc = "Toggle fTerm" })
+	-- vim.keymap.set("n", "q", M.close, { desc = "Close fTerm" })
 
 	local group = vim.api.nvim_create_augroup("fTermEvents", { clear = true })
 	vim.api.nvim_create_autocmd("TermClose", {

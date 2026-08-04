@@ -17,8 +17,8 @@ return {
 				["J"] = { "actions.preview_scroll_down", mode = "n" },
 			},
 			float = {
-				max_width = 0.9,
-				max_height = 0.9,
+				max_width = .8,
+				max_height = .8,
 				border = "double",
 				preview_split = "right",
 				win_options = {
@@ -32,14 +32,17 @@ return {
 		dependencies = { 'nvim-lua/plenary.nvim' },
 		cmd = { "Telescope" },
 		keys = {
-			{ "<leader>ff", "<Cmd>Telescope find_files<CR>" },
-			{ "<leader>fg", "<Cmd>Telescope live_grep<CR>" },
-			{ "<leader>fb", "<Cmd>Telescope buffers<CR>" },
-			{ "<leader>fh", "<Cmd>Telescope help_tags<CR>" },
+			{ "<leader>f", "<Cmd>Telescope find_files<CR>" },
+			{ "<leader>g", "<Cmd>Telescope live_grep<CR>" },
+			{ "<leader>b", "<Cmd>Telescope buffers<CR>" },
+			{ "<leader>h", "<Cmd>Telescope help_tags<CR>" },
 		},
 		opts = {
 			defaults = {
 				borderchars = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" }, -- "╦" "╩" "╬"
+				file_ignore_patterns = {
+					"google%-10k%-words%.txt",
+				}
 			}
 		}
 	},
