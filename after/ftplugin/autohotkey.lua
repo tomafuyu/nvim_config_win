@@ -1,7 +1,7 @@
 vim.lsp.config("autohotkey_lsp", {
 	cmd = {
 		"node",
-		vim.fn.expand("$HOME/source/vscode-autohotkey2-lsp/server/dist/server.js"),
+		vim.fn.expand("$HOME/Documents/vscode-autohotkey2-lsp/server/dist/server.js"),
 		"--stdio"
 	},
 	filetypes = {"ahk", "autohotkey", "ah2"},

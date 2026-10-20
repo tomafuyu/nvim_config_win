@@ -6,6 +6,10 @@ return {
 		"ColorizerReloadAllBuffers",
 		"ColorizerToggle",
 	},
+	keys = {
+		"<Leader><Leader>ca",
+		"<Leader><Leader>cr",
+	},
 	opts = {
 		name = false,
 		RGB = true,
@@ -15,6 +19,8 @@ return {
 	},
 	config = function(_, opts)
 		require("colorizer").setup({ "*" }, opts)
+		require("vc").nn("<Leader><Leader>ca", require("colorizer").attach_to_buffer)
+		require("vc").nn("<Leader><Leader>cr", require("colorizer").reload_all_buffers)
 	end
 }
 

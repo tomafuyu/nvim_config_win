@@ -55,7 +55,7 @@ return {
 			{ "<Leader>Y", "<Cmd>Yazi cwd<CR>" },
 		},
 		opts = {
-			yazi_floating_window_border = "double",
+			yazi_floating_window_border = "rounded",
 			-- yazi_floating_window_winblend = c.blend,
 		},
 	},

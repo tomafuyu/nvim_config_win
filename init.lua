@@ -32,6 +32,7 @@ vim.lsp.enable{
 	"cssls",
 	"vtsls",
 	"jsonls",
+	"taplo",
 	"clangd",
 	"vimls",
 	-- "jdtls",

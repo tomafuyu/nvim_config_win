@@ -35,10 +35,10 @@ nn("<CR>", "i<CR><Esc>")
 nn("g<Esc>","<Cmd>noh<CR>")
 nn("<Leader>v", "<C-v>")
 
-if vim.g.vscode then return end
-
 no("gt", "H")
 no("gb", "L")
+
+if vim.g.vscode then return end
 
 nn("<C-k>", "<Cmd>move -2<CR>")
 nn("<C-j>", "<Cmd>move +1<CR>")
@@ -72,4 +72,26 @@ nn("grc", vim.lsp.buf.declaration)
 nn("grf", vim.lsp.buf.definition)
 
 nn("<Leader><Leader>c", "i<C-r>=<C-r>0<CR>") -- calc
+
+nn(
+	'<leader>dy',
+	function ()
+		local diagnostics = vim.diagnostic.get(0, {
+			lnum = vim.api.nvim_win_get_cursor(0)[1] - 1,
+		})
+
+		if #diagnostics == 0 then
+			vim.notify('No diagnostics on current line')
+			return
+		end
+
+		local messages = vim.tbl_map(function(d)
+			return d.message
+		end, diagnostics)
+
+		vim.fn.setreg('+', table.concat(messages, '\n'))
+		vim.notify('Diagnostics copied to clipboard')
+	end
+)
+
 

@@ -31,7 +31,7 @@ no nn vn xn snor ono no ino ln cno tno
 a hop
 b telescope
 c hop
-d
+d diagnostic
 e hop
 f telescope
 g telescope
@@ -58,6 +58,10 @@ z lazy
 , dail
 ; hop
 <>
+
+## leader leader
+
+c colorizer
 
 ## lazy
 

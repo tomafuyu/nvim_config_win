@@ -3,7 +3,7 @@ local c = require("color")
 
 hi("CursorLineNr", { fg = c.alice })
 hi("LineNr",       { fg = c.gray })
-hi("CursorLine",   { bg = c.navy })
+hi("CursorLine",   { bg = c.none })
 hi("CursorColumn", { bg = c.navy })
 hi("WinSeparator", { fg = c.blue })
 hi("NormalFloat",  { bg = c.float })
