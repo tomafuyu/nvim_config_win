@@ -1,10 +1,5 @@
 # nvim settings and info
 
-## suggested plugins
-
-https://github.com/nvim-mini/mini.animate
-https://github.com/nvim-mini/mini.hipatterns
-
 ## mapping
 
 | cmd \ mode  | n | i | c | v | s | o | t | l |
@@ -31,16 +26,15 @@ no nn vn xn snor ono no ino ln cno tno
 ^x^f file name
 ^x^o omni
 
-## leader
+## leader1
 
 a hop
 b telescope
 c hop
 d
 e hop
-f telescope
-g telescope
-G git
+f~telescope
+g~telescope
 h telescope
 i
 j
@@ -53,7 +47,7 @@ p
 q
 r resize mode
 s hop
-t tree
+t
 u
 v ^v
 w~hop
@@ -64,9 +58,10 @@ z lazy
 ; hop
 <>
 
-## leader leader
+## leader2
 
 c colorizer
+g lazygit
 
 ## lazy
 
@@ -74,7 +69,6 @@ c colorizer
 	- 50: default
 	- 100
 		- lualine
-		- nvim tree
 	- 200
 		- lspconfig
 		- treesitter
@@ -88,18 +82,6 @@ removed 1~3 chars words
 
 ╦ ╬ ╩
 
-## ascii
-
-\|0123456789abcdef
--+----------------
-2| !"#$%&'()*+,-./
-3|0123456789:;<=>?
-4|@ABCDEFGHIJKLMNO
-5|PQRSTUVWXYZ[\]^_
-6|`abcdefghijklmno
-7|pqrstuvwxyz{|}~
--+----------------
-
 ## idea
 
 nn qq q
@@ -107,7 +89,8 @@ nn qq q
 :h 'guicursor'
 https://github.com/RRethy/vim-illuminate
 
-move cmdline prompt by [[, ]]
+move between cmdline prompt by [[, ]]
 https://neovim.io/doc/user/terminal/#terminal-osc133
 
+https://github.com/nvim-mini/mini.hipatterns
 

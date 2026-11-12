@@ -33,9 +33,10 @@ local function fmt_tab(name, context)
 	local bufs = {}
 	for _, w in ipairs(vim.api.nvim_tabpage_list_wins(tab)) do
 		if vim.api.nvim_win_get_config(w).relative == "" then
-			local n = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
-			n = n ~= "" and vim.fn.fnamemodify(n, ":t") or "/???/"
-			if (not vim.startswith(n, "NvimTree")) then
+			local buf = vim.api.nvim_win_get_buf(w)
+			if vim.bo[buf].filetype ~= "no-neck-pain" then
+				local n = vim.api.nvim_buf_get_name(buf)
+				n = n ~= "" and vim.fn.fnamemodify(n, ":t") or "/???/"
 				table.insert(bufs, n)
 			end
 		end
@@ -85,13 +86,20 @@ return {
 		sections = {
 			lualine_a = {
 				{
+					function()
+						return vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
+					end,
+				},
+				{
 					"filename",
 					path = 1,
 					file_status = false,
 					shorting_target = 32,
 				},
 			},
-			lualine_b = {},
+			lualine_b = {
+				"branch",
+			},
 			lualine_c = {
 				{ "", draw_empty = true, component_separators = { left = " " } },
 				{

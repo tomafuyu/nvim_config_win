@@ -13,5 +13,15 @@ return {
 			}
 		end
 	},
+	{
+		"shortcuts/no-neck-pain.nvim",
+		opts = {
+			width = vim.o.columns*2/3,
+			autocmds = {
+				enableOnVimEnter = true,
+				enableOnTabEnter = true,
+			},
+		},
+	},
 }
 

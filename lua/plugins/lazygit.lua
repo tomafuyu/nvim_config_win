@@ -9,7 +9,7 @@ return {
 		"LazyGitFilterCurrentFile",
 	},
 	keys = {
-		{ "<leader>G", "<Cmd>LazyGit<CR>", desc = "LazyGit" }
+		{ "<leader><leader>g", "<Cmd>LazyGit<CR>", desc = "LazyGit" }
 	}
 }
 

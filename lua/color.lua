@@ -4,6 +4,7 @@ return {
 	white  = "#eeeeee",
 	gray   = "#a0a0a0",
 	black1 = "#111111",
+	black2 = "#222222",
 	black3 = "#333333",
 	float  = "#001122",
 	navy   = "#001122",

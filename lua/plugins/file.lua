@@ -39,9 +39,11 @@ return {
 		cmd = { "Telescope" },
 		keys = {
 			{ "<leader>f", "<Cmd>Telescope find_files<CR>" },
+			{ "<leader>F", "<Cmd>Telescope git_files<CR>" },
 			{ "<leader>g", "<Cmd>Telescope live_grep<CR>" },
 			{ "<leader>b", "<Cmd>Telescope buffers<CR>" },
 			{ "<leader>h", "<Cmd>Telescope help_tags<CR>" },
+			{ "<leader>/", "<Cmd>Telescope current_buffer_fuzzy_find<CR>" },
 		},
 		opts = {
 			defaults = {

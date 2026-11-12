@@ -50,6 +50,18 @@ local function track(buf)
 	end
 end
 
+local function open_last_or()
+	vim.api.nvim_set_current_dir(root)
+	if vim.fn.filereadable(state_path) == 1 then
+		local path = vim.fn.readfile(state_path)[1]
+		if path and vim.fn.filereadable(path) == 1 and is_in_root(vim.fs.normalize(path)) then
+			vim.cmd.edit(vim.fn.fnameescape(path))
+			return
+		end
+	end
+	require("telescope.builtin").git_files({ cwd = root })
+end
+
 vim.api.nvim_create_autocmd(
 	{ "BufEnter", "WinEnter", "BufWritePost" },
 	{
@@ -71,18 +83,8 @@ if is_dir then
 	vim.api.nvim_create_autocmd("VimEnter", {
 		once = true,
 		callback = function()
-			vim.schedule(function()
-				vim.api.nvim_set_current_dir(root)
-				if vim.fn.filereadable(state_path) == 1 then
-					local path = vim.fn.readfile(state_path)[1]
-
-					if path and vim.fn.filereadable(path) == 1 and is_in_root(vim.fs.normalize(path)) then
-						vim.cmd.edit(vim.fn.fnameescape(path))
-						return
-					end
-				end
-				require("telescope.builtin").find_files({ cwd = root })
-			end)
+			vim.schedule(open_last_or)
 		end
 	})
 end
+
