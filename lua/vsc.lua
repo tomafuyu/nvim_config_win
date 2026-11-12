@@ -1,11 +1,8 @@
--- https://github.com/vscode-neovim/vscode-neovim/issues/540
--- vim.g.matchup_matchparen_deferred = 1
-
-require("config.lazy")
 require("lazy").setup({
 	checker = { enabled = true, notify = false },
 	spec = {
 		{ import = "plugins.util" },
+		{ import = "plugins.ime" },
 	},
 })
 
@@ -46,4 +43,7 @@ nn("<Leader><Leader>r", v"testing.runAtCursor")
 
 nn("<Leader><Leader>tp", v"tinymist.browsingPreview")
 nn("<Leader><Leader>ts", v"typst-preview.sync")
+
+-- https://github.com/vscode-neovim/vscode-neovim/issues/540
+-- vim.g.matchup_matchparen_deferred = 1
 

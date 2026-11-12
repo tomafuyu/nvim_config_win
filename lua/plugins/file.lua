@@ -7,7 +7,12 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		cmd = { "Oil" },
 		keys = {
-			{ "<Leader>o", function() require("oil").toggle_float(nil, { preview = { split = "belowright" } }) end },
+			{
+				"<Leader>o",
+				function()
+					require("oil").toggle_float(nil, { preview = { split = "belowright" } })
+				end
+			},
 		},
 		opts = {
 			default_file_explorer = false,
@@ -15,6 +20,7 @@ return {
 				["q"] = { "actions.close", mode = "n" },
 				["K"] = { "actions.preview_scroll_up", mode = "n" },
 				["J"] = { "actions.preview_scroll_down", mode = "n" },
+				["<BS>"] = { "actions.parent", mode = "n" },
 			},
 			float = {
 				max_width = .8,
@@ -39,12 +45,32 @@ return {
 		},
 		opts = {
 			defaults = {
-				borderchars = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" }, -- "╦" "╩" "╬"
+				borderchars = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" },
 				file_ignore_patterns = {
 					"google%-10k%-words%.txt",
-				}
-			}
-		}
+				},
+				-- mappings = {
+				-- 	i = {
+				-- 		["<C-h>"] = function(bufnr)
+				-- 			require("telescope.actions").select_vertical(bufnr)
+				-- 		end,
+				-- 		["<C-v>"] = function(bufnr)
+				-- 			vim.opt.splitright = true
+				-- 			require("telescope.actions").select_vertical(bufnr)
+				-- 		end,
+				-- 	},
+				-- 	n = {
+				-- 		["<C-h>"] = function(bufnr)
+				-- 			require("telescope.actions").select_vertical(bufnr)
+				-- 		end,
+				-- 		["<C-v>"] = function(bufnr)
+				-- 			vim.opt.splitright = true
+				-- 			require("telescope.actions").select_vertical(bufnr)
+				-- 		end,
+				-- 	},
+				-- },
+			},
+		},
 	},
 	{
 		"mikavilpas/yazi.nvim",

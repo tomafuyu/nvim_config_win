@@ -6,6 +6,11 @@ local no = vc.no
 local nn = vc.nn
 local xn = vc.xn
 local ino = vc.ino
+local cno = vc.cno
+local tno = vc.tno
+
+cno("vh", "belowright vertical help ")
+tno("<S-Esc>", "<C-\\><C-n>")
 
 -- Cut worD Edit
 m("c", "d")
@@ -73,25 +78,21 @@ nn("grf", vim.lsp.buf.definition)
 
 nn("<Leader><Leader>c", "i<C-r>=<C-r>0<CR>") -- calc
 
-nn(
-	'<leader>dy',
-	function ()
-		local diagnostics = vim.diagnostic.get(0, {
-			lnum = vim.api.nvim_win_get_cursor(0)[1] - 1,
-		})
+nn('gry', function()
+	local diagnostics = vim.diagnostic.get(0, {
+		lnum = vim.api.nvim_win_get_cursor(0)[1] - 1,
+	})
 
-		if #diagnostics == 0 then
-			vim.notify('No diagnostics on current line')
-			return
-		end
-
-		local messages = vim.tbl_map(function(d)
-			return d.message
-		end, diagnostics)
-
-		vim.fn.setreg('+', table.concat(messages, '\n'))
-		vim.notify('Diagnostics copied to clipboard')
+	if #diagnostics == 0 then
+		vim.notify('No diagnostics on current line')
+		return
 	end
-)
 
+	local messages = vim.tbl_map(function(d)
+		return d.message
+	end, diagnostics)
+
+	vim.fn.setreg('+', table.concat(messages, '\n'))
+	vim.notify('Diagnostics copied to clipboard')
+end)
 

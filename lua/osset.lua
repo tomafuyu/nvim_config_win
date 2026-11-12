@@ -1,5 +1,5 @@
 local set = vim.opt
-local os = vim.loop.os_uname().sysname
+local os = vim.uv.os_uname().sysname
 
 if os == "Windows_NT" then
 	set.undodir = vim.fn.expand("$HOME/AppData/Local/nvim-data/undo")

@@ -76,7 +76,8 @@ return {
 			lualine_y = { "reg_recording" },
 			lualine_z = {
 				{
-					function() return vim.api.nvim_get_mode().mode end, -- [NOTE] will be changed by submode
+					-- [NOTE] function will be changed by submode
+					function() return vim.api.nvim_get_mode().mode end,
 					color = { gui = "bold" }
 				},
 			},

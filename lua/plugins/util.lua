@@ -10,12 +10,17 @@ return {
 	},
 	{
 		"nvim-mini/mini.ai",
+		-- keys = {
+		-- 	{ "k", mode = "o" },
+		-- 	{ "j", mode = "o" },
+		-- },
 		config = function()
 			local ai = require('mini.ai')
 			ai.setup{
 				custom_textobjects = {
 					k = ai.gen_spec.pair("「", "」"),
 					j = ai.gen_spec.pair("（", "）"),
+					["$"] = ai.gen_spec.pair("$", "$"),
 				},
 			}
 		end
@@ -68,8 +73,8 @@ return {
 			hop.setup(opts)
 			no("<Leader>c", hop.hint_char1)
 			no("<Leader>w", hop.hint_words)
-			no("<Leader>W", function() hop.hint_patterns({}, "\\S\\+") end)
-			no("<Leader>;", function() hop.hint_patterns({}, "[=,;'\"<>(){}\\[\\]^$]\\+") end)
+			no("<Leader>W", function() hop.hint_patterns({}, [[\S\+]]) end)
+			no("<Leader>;", function() hop.hint_patterns({}, "[[:punct:]]") end)
 			no("<Leader>s", hop.hint_lines_skip_whitespace)
 			no("<Leader>a", hop.hint_anywhere)
 			nn("<Leader>e", function() hop.hint_lines_skip_whitespace({multi_windows = true}) end)

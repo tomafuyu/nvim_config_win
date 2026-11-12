@@ -1,6 +1,3 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 local hi = require("vc").hi
 local p = require("color")
 hi("NvimTreeOpenedHL", { fg = p.white })
@@ -80,6 +77,7 @@ end
 return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	enabled = false,
 	version = "*",
 	lazy = false,
 	priority = 100,
@@ -87,6 +85,8 @@ return {
 		{ "<Leader>t", "<Cmd>NvimTreeToggle<CR>" },
 	},
 	opts = {
+		disable_netrw = true,
+		hijack_cursor = true,
 		actions = {
 			expand_all = {
 				exclude = { ".git" },

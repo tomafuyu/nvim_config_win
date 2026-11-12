@@ -1,5 +1,10 @@
 # nvim settings and info
 
+## suggested plugins
+
+https://github.com/nvim-mini/mini.animate
+https://github.com/nvim-mini/mini.hipatterns
+
 ## mapping
 
 | cmd \ mode  | n | i | c | v | s | o | t | l |
@@ -31,7 +36,7 @@ no nn vn xn snor ono no ino ln cno tno
 a hop
 b telescope
 c hop
-d diagnostic
+d
 e hop
 f telescope
 g telescope
@@ -72,11 +77,16 @@ c colorizer
 		- nvim tree
 	- 200
 		- lspconfig
+		- treesitter
 
 ## google-10k-words
 
 https://github.com/first20hours/google-10000-english
 removed 1~3 chars words
+
+## separator, border
+
+╦ ╬ ╩
 
 ## ascii
 

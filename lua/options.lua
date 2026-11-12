@@ -15,7 +15,7 @@ set.matchtime = 1
 set.modeline = true
 set.number = true
 set.relativenumber = true
--- set.signcolumn = "yes:1"
+set.signcolumn = "yes:1"
 
 set.belloff = "all"
 set.shortmess:append("F")
@@ -35,16 +35,17 @@ set.softtabstop = 4
 set.autoindent = true
 set.smartindent = true
 set.smarttab = true
--- set.expandtab = true
+vim.opt.listchars:append({ tab = "▏ " })
 
 set.wrap = false
 set.list = true
 
 set.backspace = { "indent", "eol", "start" }
 
--- set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-
-set.modifiable = true
-
 set.undofile = true
+
+-- set.splitright = true
+
+-- set.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+-- set.modifiable = true
 

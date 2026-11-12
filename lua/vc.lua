@@ -43,6 +43,16 @@ function M.ino(lhs, rhs, opts)
 	vim.keymap.set("i", lhs, rhs, opts)
 end
 
+function M.cno(lhs, rhs, opts)
+	opts = getNoreOpts(opts)
+	vim.keymap.set("c", lhs, rhs, opts)
+end
+
+function M.tno(lhs, rhs, opts)
+	opts = getNoreOpts(opts)
+	vim.keymap.set("t", lhs, rhs, opts)
+end
+
 function M.cmd(n, c, o)
 	o = o or {}
 	vim.api.nvim_create_user_command(n, c, o)

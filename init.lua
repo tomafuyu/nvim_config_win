@@ -1,11 +1,19 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
-require("keymaps")
-
-if vim.g.vscode then require("vsc") return end
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_nvim_dir_plugin = 1
 
 require("config.lazy")
+require("keymaps")
+
+if vim.g.vscode then
+	require("vsc")
+	return
+end
+
+require("config.last")
+
 require("lazy").setup{
 	ui = { border = "double" },
 	checker = { enabled = false },
@@ -18,8 +26,6 @@ require("commands")
 require("osset")
 
 -- require("fTerm").setup{}
-
--- vim.treesitter.start()
 
 vim.lsp.enable{
 	"lua_ls",

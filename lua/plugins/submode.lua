@@ -2,20 +2,23 @@ local w = {
 	mode = "n",
 	enter = "<Leader>r",
 	leave = { "q", "<Esc>" },
-	default = function(r)
-		r("k", "<C-w>-")
-		r("j", "<C-w>+")
-		r("h", "<C-w><")
-		r("l", "<C-w>>")
-		r("K", "<C-w>K")
-		r("J", "<C-w>J")
-		r("H", "<C-w>H")
-		r("L", "<C-w>L")
-		r("r", "<C-w>r")
-		r("R", "<C-w>R")
-		r("x", "<C-w>x")
-		r("=", "<C-w>=")
-		r("|", "<C-w>|")
+	default = function(m)
+		m("b", "<C-w>b") -- bot
+		m("k", "<C-w>-")
+		m("j", "<C-w>+")
+		m("h", "<C-w><")
+		m("l", "<C-w>>")
+		m("K", "<C-w>K")
+		m("J", "<C-w>J")
+		m("H", "<C-w>H")
+		m("L", "<C-w>L")
+		m("r", "<C-w>r")
+		m("R", "<C-w>R")
+		m("t", "<C-w>t") -- top right
+		m("T", "<C-w>T") -- tab
+		m("x", "<C-w>x") -- exchange
+		m("=", "<C-w>=")
+		m("|", "<C-w>|") -- widest, width n
 	end
 }
 
